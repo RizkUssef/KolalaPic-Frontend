@@ -1,0 +1,17 @@
+@import '../abstracts/variables';
+button{
+    padding: 8px 30px;
+    border-radius: 10px;
+    background: transparent;
+    color: $secondary-color;
+    border: 1px solid $primary-color;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    align-self: center;
+    margin-top: 10px;
+    &:hover{
+        background: $secondary-color;
+        color: $primary-color;   
+        border: 1px solid $secondary-color;
+    }
+}

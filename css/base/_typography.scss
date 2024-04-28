@@ -1,0 +1,57 @@
+@import '../abstracts/variables';
+
+$font-primary: "Macondo Swash Caps", cursive;
+$font-secondary: "Macondo", cursive;
+
+$font-size-base: 16px;
+$font-size-small: 20px;
+$font-size-medium-1: 24px;
+$font-size-medium: 32px;
+$font-size-large: 40px;
+
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+*{
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+}
+
+h1{
+  font-family: $font-primary;
+  font-size: $font-size-large;
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+}
+
+h2{
+  font-family: $font-primary;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+}
+
+h3{
+  font-family: $font-primary;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  color: $primary-color;
+}
+
+h4{
+  font-family: $font-primary;
+  font-size: $font-size-medium-1;
+  font-weight: $font-weight-normal;
+  color: $secondary-color;
+}
+
+p{
+  font-family: $font-secondary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  color: $secondary-color;
+}
+
+
+
