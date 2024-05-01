@@ -41,9 +41,13 @@ h3{
 
 h4{
   font-family: $font-primary;
-  font-size: $font-size-medium-1;
+  font-size: $font-size-base;
   font-weight: $font-weight-normal;
   color: $secondary-color;
+  line-height: normal;
+  @media screen and (min-width: $breakpoint-lg) {
+    font-size: $font-size-medium-1;
+  }
 }
 
 p{

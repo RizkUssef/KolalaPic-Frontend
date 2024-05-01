@@ -186,9 +186,15 @@ h3 {
 
 h4 {
   font-family: "Macondo Swash Caps", cursive;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   color: #927A63;
+  line-height: normal;
+}
+@media screen and (min-width: 992px) {
+  h4 {
+    font-size: 24px;
+  }
 }
 
 p {
@@ -227,9 +233,15 @@ h3 {
 
 h4 {
   font-family: "Macondo Swash Caps", cursive;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   color: #927A63;
+  line-height: normal;
+}
+@media screen and (min-width: 992px) {
+  h4 {
+    font-size: 24px;
+  }
 }
 
 p {
@@ -303,10 +315,12 @@ body {
 
 .img {
   position: relative;
-  width: 350px;
-  height: 450px;
-  border-radius: 15px;
+  width: 100%;
   overflow: hidden;
+  line-height: 0%;
+}
+.img img {
+  border-radius: 15px;
 }
 .img .image-layer {
   transition: opacity 0.5s ease-in-out;
@@ -321,15 +335,23 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  border-radius: 15px;
   background-color: rgba(0, 0, 0, 0.5);
+}
+.img .image-layer h4 {
+  margin-top: px;
 }
 .img .image-layer ul {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  align-self: flex-end;
   gap: 20px;
+}
+@media screen and (min-width: 992px) {
+  .img .image-layer ul {
+    justify-content: flex-end;
+  }
 }
 .img .image-layer ul a {
   font-size: 24px;
@@ -340,6 +362,12 @@ body {
 }
 .img .image-layer ul a i {
   transition: transform 0.3s ease-in-out;
+  font-size: 16px;
+}
+@media screen and (min-width: 992px) {
+  .img .image-layer ul a i {
+    font-size: 24px;
+  }
 }
 .img .image-layer ul a:hover i {
   transform: scale(1.2);
@@ -394,9 +422,15 @@ h3 {
 
 h4 {
   font-family: "Macondo Swash Caps", cursive;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   color: #927A63;
+  line-height: normal;
+}
+@media screen and (min-width: 992px) {
+  h4 {
+    font-size: 24px;
+  }
 }
 
 p {
@@ -471,9 +505,15 @@ h3 {
 
 h4 {
   font-family: "Macondo Swash Caps", cursive;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   color: #927A63;
+  line-height: normal;
+}
+@media screen and (min-width: 992px) {
+  h4 {
+    font-size: 24px;
+  }
 }
 
 p {
@@ -529,5 +569,113 @@ p {
   }
   .header .header-contant .nav-links-search {
     display: flex;
+  }
+}
+
+* {
+  font-family: "Macondo Swash Caps", cursive;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1 {
+  font-family: "Macondo Swash Caps", cursive;
+  font-size: 40px;
+  font-weight: 700;
+  color: #5C4033;
+}
+
+h2 {
+  font-family: "Macondo Swash Caps", cursive;
+  font-size: 32px;
+  font-weight: 700;
+  color: #5C4033;
+}
+
+h3 {
+  font-family: "Macondo Swash Caps", cursive;
+  font-size: 20px;
+  font-weight: 700;
+  color: #5C4033;
+}
+
+h4 {
+  font-family: "Macondo Swash Caps", cursive;
+  font-size: 16px;
+  font-weight: 400;
+  color: #927A63;
+  line-height: normal;
+}
+@media screen and (min-width: 992px) {
+  h4 {
+    font-size: 24px;
+  }
+}
+
+p {
+  font-family: "Macondo", cursive;
+  font-size: 16px;
+  font-weight: 400;
+  color: #927A63;
+}
+
+.images {
+  padding: 30px 0px;
+}
+.images .all-images {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+.images .all-images .first-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+.images .all-images .first-col .col-1, .images .all-images .first-col .col-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.images .all-images .second-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+.images .all-images .second-col .col-1, .images .all-images .second-col .col-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .images .all-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .images .all-images .first-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .images .all-images .second-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -57,10 +57,12 @@ body {
 
 .img {
   position: relative;
-  width: 350px;
-  height: 450px;
-  border-radius: 15px;
+  width: 100%;
   overflow: hidden;
+  line-height:0%;
+  img{
+    border-radius: 15px;
+  }
   .image-layer {
     transition: opacity 0.5s ease-in-out;
     padding: 15px;
@@ -71,11 +73,17 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
+    border-radius: 15px;
     background-color: rgba(#000, $alpha: 0.5);
+    h4{
+      margin-top: px
+    }
     ul {
-      @include flex();
-      align-self: flex-end;
+      @include flex(row,space-between);
       gap: 20px;
+      @media screen and (min-width: $breakpoint-lg) {
+        justify-content: flex-end;
+      }
       a {
         font-size: calc($font-size-small + 4px);
         color: $icons-color;
@@ -83,6 +91,10 @@ body {
         width: fit-content;
         i {
           transition: transform 0.3s ease-in-out;
+          font-size: 16px;
+          @media screen and (min-width: $breakpoint-lg) {
+            font-size: $font-size-medium-1;
+          }
         }
         &:hover {
           i {
