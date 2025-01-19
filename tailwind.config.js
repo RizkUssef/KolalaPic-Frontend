@@ -20,6 +20,11 @@ module.exports = {
         'nav': '0px 5px 15px rgba(0,0,0,0.3) ', 
         'main' : '0 0 15px rgba(0,0,0,0.3)'
       },
+      backgroundImage: {
+        'couple': "url('/src/img/Kolala images/Couples/bg.jpg')",
+        'animals': "url('/src/img/Kolala images/Animals/bg.jpg')",
+        'football': "url('/src/img/Kolala images/Football/bg.jpeg')",
+      }
     },
   },
   plugins: [],

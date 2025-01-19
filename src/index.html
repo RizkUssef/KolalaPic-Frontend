@@ -12,32 +12,222 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
 </head>
 
-    <body class="bg-bg ">
-        <nav class="py-3 pl-5 z-[999999] drop-shadow-nav bg-transparent fixed left-0 right-0 ">
-            <h1 class="font-logo text-headers text-4xl">Kolala pic</h1>
-        </nav>
-        <section class="h-[100vh] overflow-hidden font-secondary text-light-text">
+<body class="bg-bg ">
+    <nav class="py-3 pl-5 z-[999999] drop-shadow-nav bg-transparent fixed left-0 right-0 ">
+        <h1 class="font-logo text-headers text-4xl">Kolala pic</h1>
+    </nav>
+    <div class="owl-carousel owl-theme h-[100vh]">
+        <section class="h-[100vh] font-secondary relative text-light-text item bg-couple bg-cover bg-center ">
+            <div class="bg-blur top-0 left-0 absolute z-[999999] right-0 bottom-0"></div>
             <div class="relative h-[100%]">
                 <div class="absolute z-[999999] top-[33%] left-[10%]">
-                    <!-- <div class="flex "> -->
                     <h1 class="font-primary text-[70px] mb-5">Couples</h1>
-                    <a href="" class="float-end transition-all duration-500 hover:text-headers hover:border-headers">Show All <i class="fa-solid fa-arrow-right"></i></a>
-                    <!-- </div> -->
+                    <a href=""
+                        class="float-end transition-all duration-500 hover:text-headers hover:border-headers">Show All<i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div class="absolute z-[999999] bottom-[50px] left-0 right-0">
-                    <div class="flex justify-between items-center w-[80%] mx-auto">
-                        <a class="p-5 border-2 border-light-text border-solid rounded-full transition-all duration-500 hover:text-headers hover:border-headers" href=""><i class="fa-solid fa-arrow-left"></i></a>
-                        <a class="p-5 border-2 border-light-text border-solid rounded-full transition-all duration-500 hover:text-headers hover:border-headers" href=""><i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="absolute top-0 left-0 bottom-0 right-0 bg-blur"></div>
-                <img class="object-cover" src="img/Kolala images/Couples/bg.jpg" alt="" srcset="">
-
             </div>
         </section>
-    </body>
+        <section class="h-[100vh] font-secondary relative text-light-text item bg-animals bg-cover bg-center ">
+            <div class="bg-blur top-0 left-0 absolute z-[999999] right-0 bottom-0"></div>
+            <div class="relative h-[100%]">
+                <div class="absolute z-[999999] top-[33%] left-[10%]">
+                    <h1 class="font-primary text-[70px] mb-5">Animals</h1>
+                    <a href=""
+                        class="float-end transition-all duration-500 hover:text-headers hover:border-headers">Show All<i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+        <section class="h-[100vh] font-secondary relative text-light-text item bg-football bg-cover bg-center ">
+            <div class="bg-blur top-0 left-0 absolute z-[999999] right-0 bottom-0"></div>
+            <div class="relative h-[100%]">
+                <div class="absolute z-[999999] top-[33%] left-[10%]">
+                    <h1 class="font-primary text-[70px] mb-5">Football</h1>
+                    <a href=""
+                        class="float-end transition-all duration-500 hover:text-headers hover:border-headers">Show All<i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="absolute z-[999999] bottom-[50px] left-0 right-0">
+        <div class="flex justify-between items-center w-[80%] mx-auto">
+            <a
+                class="customPrevBtn p-5 border-2 cursor-pointer border-light-text border-solid rounded-full transition-all duration-500 hover:text-headers hover:border-headers"><i
+                    class="text-light-text fa-solid fa-arrow-left"></i></a>
+            <a
+                class="customNextBtn p-5 border-2 cursor-pointer border-light-text border-solid rounded-full transition-all duration-500 hover:text-headers hover:border-headers"><i
+                    class="text-light-text fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+    <section class="w-[80%] mx-auto text-headers text-secondary py-10">
+        <div class="flex justify-between items-center ">
+            <h1 class="font-primary text-[50px]">More Like</h1>
+            <form action="" method="post" class="font-secondary">
+                <input type="text" value="" class="hidden">
+                <button type="submit"
+                    class="text-lg p-2 lg:p-4 lg:text-xl  border-2 border-headers border-solid rounded-full"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <div class="columns-2 mt-5 [&>div]:mb-5 lg:columns-3 xl:columns-4 text-bg ">
+            <div class="relative image_container cursor-pointer">
+                <img src="img/1.jpeg" class="rounded-xl" alt="" srcset="">
+                <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
+                    <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
+                        <div class="w-[80%] flex justify-start gap-3 items-center">
+                            <img src="img/Kolala images/Calm/1.jpeg"
+                                class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
+                            <h3>Lorem ipsum</h3>
+                        </div>
+                        <a href=""><i class="fa-regular fa-bookmark save"></i></a>
+                    </div>
+                    <div class="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
+                        <i class="fa-solid fa-share share"></i>
+                        <i class="fa-solid fa-download download"></i>
+                        <i class="fa-regular fa-heart heart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative image_container cursor-pointer">
+                <img src="img/2.jpeg" class="rounded-xl" alt="" srcset="">
+                <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
+                    <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
+                        <div class="w-[80%] flex justify-start gap-3 items-center">
+                            <img src="img/Kolala images/Calm/1.jpeg"
+                                class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
+                            <h3>Lorem ipsum</h3>
+                        </div>
+                        <a href=""><i class="fa-regular fa-bookmark save"></i></a>
+                    </div>
+                    <div class="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
+                        <i class="fa-solid fa-share share"></i>
+                        <i class="fa-solid fa-download download"></i>
+                        <i class="fa-regular fa-heart heart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative image_container cursor-pointer">
+                <img src="img/Kolala images/Couples/1.jpeg" class="rounded-xl" alt="" srcset="">
+                <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
+                    <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
+                        <div class="w-[80%] flex justify-start gap-3 items-center">
+                            <img src="img/Kolala images/Calm/1.jpeg"
+                                class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
+                            <h3>Lorem ipsum</h3>
+                        </div>
+                        <a href=""><i class="fa-regular fa-bookmark save"></i></a>
+                    </div>
+                    <div class="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
+                        <i class="fa-solid fa-share share"></i>
+                        <i class="fa-solid fa-download download"></i>
+                        <i class="fa-regular fa-heart heart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative image_container cursor-pointer">
+                <img src="img/Kolala images/Couples/2.jpeg" class="rounded-xl" alt="" srcset="">
+                <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
+                    <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
+                        <div class="w-[80%] flex justify-start gap-3 items-center">
+                            <img src="img/Kolala images/Calm/1.jpeg"
+                                class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
+                            <h3>Lorem ipsum</h3>
+                        </div>
+                        <a href=""><i class="fa-regular fa-bookmark save"></i></a>
+                    </div>
+                    <div class="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
+                        <i class="fa-solid fa-share share"></i>
+                        <i class="fa-solid fa-download download"></i>
+                        <i class="fa-regular fa-heart heart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative image_container cursor-pointer">
+                <img src="img/Kolala images/Couples/3.jpeg" class="rounded-xl" alt="" srcset="">
+                <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
+                    <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
+                        <div class="w-[80%] flex justify-start gap-3 items-center">
+                            <img src="img/Kolala images/Calm/1.jpeg"
+                                class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
+                            <h3>Lorem ipsum</h3>
+                        </div>
+                        <a href=""><i class="fa-regular fa-bookmark save"></i></a>
+                    </div>
+                    <div class="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
+                        <i class="fa-solid fa-share share"></i>
+                        <i class="fa-solid fa-download download"></i>
+                        <i class="fa-regular fa-heart heart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative image_container cursor-pointer">
+                <img src="img/Kolala images/Couples/4.jpeg" class="rounded-xl" alt="" srcset="">
+                <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
+                    <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
+                        <div class="w-[80%] flex justify-start gap-3 items-center">
+                            <img src="img/Kolala images/Calm/1.jpeg"
+                                class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
+                            <h3>Lorem ipsum</h3>
+                        </div>
+                        <a href=""><i class="fa-regular fa-bookmark save"></i></a>
+                    </div>
+                    <div class="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
+                        <i class="fa-solid fa-share share"></i>
+                        <i class="fa-solid fa-download download"></i>
+                        <i class="fa-regular fa-heart heart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative image_container cursor-pointer">
+                <img src="img/Kolala images/Couples/5.jpeg" class="rounded-xl" alt="" srcset="">
+                <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
+                    <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
+                        <div class="w-[80%] flex justify-start gap-3 items-center">
+                            <img src="img/Kolala images/Calm/1.jpeg"
+                                class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
+                            <h3>Lorem ipsum</h3>
+                        </div>
+                        <a href=""><i class="fa-regular fa-bookmark save"></i></a>
+                    </div>
+                    <div class="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
+                        <i class="fa-solid fa-share share"></i>
+                        <i class="fa-solid fa-download download"></i>
+                        <i class="fa-regular fa-heart heart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative image_container cursor-pointer">
+                <img src="img/Kolala images/Couples/6.jpeg" class="rounded-xl" alt="" srcset="">
+                <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
+                    <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
+                        <div class="w-[80%] flex justify-start gap-3 items-center">
+                            <img src="img/Kolala images/Calm/1.jpeg"
+                                class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
+                            <h3>Lorem ipsum</h3>
+                        </div>
+                        <a href=""><i class="fa-regular fa-bookmark save"></i></a>
+                    </div>
+                    <div class="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
+                        <i class="fa-solid fa-share share"></i>
+                        <i class="fa-solid fa-download download"></i>
+                        <i class="fa-regular fa-heart heart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
 
 
 </html>
