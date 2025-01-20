@@ -21,15 +21,15 @@ $().ready(function () {
     });
 
 
-// hover explain
+    // hover explain
     $('.image_container').hover(
         function () {
             $(this).find('.image_overlay').removeClass('hidden');
-            $(this).find("a .save").on("click",function (e) {
+            $(this).find("a .save").on("click", function (e) {
                 e.preventDefault();
-                if($(this).hasClass("fa-regular")) {
+                if ($(this).hasClass("fa-regular")) {
                     $(this).removeClass("fa-regular").addClass('fa-solid');
-                }else{
+                } else {
                     $(this).removeClass("fa-solid").addClass('fa-regular');
                 }
             });
@@ -40,8 +40,25 @@ $().ready(function () {
     );
 
 
+    // second section from nav
+    let like_offset = $('#like_more').offset().top;
+    // console.log(like_offset);
+
+    // how much nav down
+    $(window).on("scroll", function () {
+        let scroll = $(this).scrollTop();
+        if (scroll > like_offset) {
+            $('#nav').css({ "background-color": "#B3C8CF" })
+        } else {
+            $('#nav').css({ "background-color": "transparent" })
+
+        }
+    })
+
+    // search show
+    $('#search_btn').on('click', function (e) {
+        e.preventDefault();
+        $('#search_input').removeClass("hidden").addClass("flex")
+    });
 
 });
-
-
-

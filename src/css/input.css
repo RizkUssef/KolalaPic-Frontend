@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-links{
+   @apply hover:bg-headers hover:text-light-text px-5 py-2 rounded-xl transition-all duration-500;
+}
+
+.slider_btn{
+    @apply  border-2 cursor-pointer border-light-text border-solid rounded-full transition-all duration-500 hover:text-headers hover:border-headers w-[50px] h-[50px] flex justify-center items-center;
+}
