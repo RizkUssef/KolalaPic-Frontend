@@ -10,16 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kablammo&family=Keania+One&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/output.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
 </head>
 
 <body class="bg-bg">
-    <nav id="nav" class="py-3 z-[999999] drop-shadow-nav bg-transparent fixed left-0 right-0  transition-all duration-500">
+    <nav id="nav"
+        class="nav py-3 z-[999999] drop-shadow-nav bg-transparent fixed left-0 right-0  transition-all duration-500">
         <div class="w-[90%] mx-auto flex justify-between items-center">
-            <a href=""><h1 class="font-logo text-headers text-4xl">Kolala pic</h1></a>
+            <a href="">
+                <h1 class="font-logo text-headers text-4xl">Kolala pic</h1>
+            </a>
             <div class="flex justify-between items-center text-headers font-secondary text-xl gap-7 ">
                 <a class="nav-links" href="">Animals</a>
                 <a class="nav-links " href="">Calm</a>
@@ -31,70 +34,48 @@
             </div>
         </div>
     </nav>
-    <section>
-        <div class="owl-carousel owl-theme h-[100vh]">
-            <section class="h-[100vh] font-secondary relative text-light-text item bg-couple bg-cover bg-center ">
-                <div class="bg-blur top-0 left-0 absolute z-[999999] right-0 bottom-0"></div>
-                <div class="relative h-[100%]">
-                    <div class="absolute z-[999999] top-[33%] left-[10%]">
-                        <h1 class="font-primary text-[70px] mb-5">Couples</h1>
-                        <a href=""
-                            class="float-end transition-all duration-500 hover:text-headers hover:border-headers">Show All<i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </section>
-            <section class="h-[100vh] font-secondary relative text-light-text item bg-animals bg-cover bg-center ">
-                <div class="bg-blur top-0 left-0 absolute z-[999999] right-0 bottom-0"></div>
-                <div class="relative h-[100%]">
-                    <div class="absolute z-[999999] top-[33%] left-[10%]">
-                        <h1 class="font-primary text-[70px] mb-5">Animals</h1>
-                        <a href=""
-                            class="float-end transition-all duration-500 hover:text-headers hover:border-headers">Show All<i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </section>
-            <section class="h-[100vh] font-secondary relative text-light-text item bg-football bg-cover bg-center ">
-                <div class="bg-blur top-0 left-0 absolute z-[999999] right-0 bottom-0"></div>
-                <div class="relative h-[100%]">
-                    <div class="absolute z-[999999] top-[33%] left-[10%]">
-                        <h1 class="font-primary text-[70px] mb-5">Football</h1>
-                        <a href=""
-                            class="float-end transition-all duration-500 hover:text-headers hover:border-headers">Show All<i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </section>
+    
+    <section id="profile" class="profile block py-10  pt-[100px] w-[90%] mx-auto font-secondary">
+        <div class="flex justify-between items-center text-headers ">
+            <h1 class="font-primary text-[50px]">Profile</h1>
+            <a href="" id="search_btn" type="submit" class="text-lg lg:p-4 lg:text-xl slider_btn">
+                <i class="fa-regular fa-pen-to-square"></i></a>
         </div>
-        <div class="absolute z-[999999] bottom-[50px] left-0 right-0">
-            <div class="flex justify-between items-center w-[80%] mx-auto">
-                <a
-                    class="customPrevBtn slider_btn"><i
-                        class="text-light-text fa-solid fa-arrow-left"></i></a>
-                <a
-                    class="customNextBtn slider_btn"><i
-                        class="text-light-text fa-solid fa-arrow-right"></i></a>
+        <div class="flex justify-start items-center gap-7 mt-10">
+            <img class="w-32 h-32 rounded-full" src="../img/1.jpeg" alt="">
+            <div class="">
+                <h3 class="text-headers text-2xl">Lorem ipsum</h3>
+                <p class="text-light-text">email.pop@gamil.com</p>
             </div>
         </div>
-    </section>
-    <section id="like_more" class="w-[80%] like mx-auto text-headers text-secondary py-10  transition-all duration-500">
-        <div class="flex justify-between items-center ">
-            <h1 class="font-primary text-[50px]">More Like</h1>
-            <form action="" method="post" class="font-secondary flex justify-center items-center">
-                <input id="search_input" type="text" value="" class="hidden text-headers font-secondary text-xl bg-white rounded-xl focus:outline-none focus:border-2 focus:border-headers p-3">
-                <button id="search_btn" type="submit"
-                    class="text-lg lg:p-4 lg:text-xl slider_btn"><i
-                        class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
+        <div class="flex justify-between items-center w-[70%] mx-auto mt-10 text-headers text-xl">
+            <div class="relative">
+                <img src="../img/Kolala images/Calm/1.jpeg" class="w-72 h-52 rounded-2xl border-4 border-white" alt="">
+                <i
+                    class="fa-solid profile_ico fa-heart absolute top-full left-full -translate-x-1/2 -translate-y-1/2 p-5 bg-white cursor-pointer border-4 border-white  rounded-full"></i>
+            </div>
+            <div class="relative">
+                <img src="../img/Kolala images/Couples/10.jpeg" class="w-72 h-52 rounded-2xl border-4 border-white"
+                    alt="">
+                <i
+                    class="fa-solid profile_ico fa-upload absolute top-full left-full -translate-x-1/2 -translate-y-1/2 p-5 bg-bg cursor-pointer border-4 border-white  rounded-full"></i>
+            </div>
+            <div class="relative">
+                <img src="../img/Kolala images/Calm/12.jpeg" class="w-72 h-52 rounded-2xl border-4 border-white" alt="">
+                <i
+                    class="fa-solid profile_ico fa-bookmark absolute top-full left-full -translate-x-1/2 -translate-y-1/2 p-5 bg-bg cursor-pointer  border-4 border-white  rounded-full"></i>
+            </div>
         </div>
-        <div class="columns-2 mt-5 [&>div]:mb-5 lg:columns-3 xl:columns-4 text-bg font-secondary ">
+        <div class="mt-10">
+            <h1 class="font-primary text-[50px] text-headers">Loved Photos</h1>
+        </div>
+        <div class="columns-2 mt-10 [&>div]:mb-5 lg:columns-3 xl:columns-4 text-bg font-secondary ">
             <div class="relative image_container cursor-pointer">
-                <img src="img/1.jpeg" class="rounded-xl" alt="" srcset="">
+                <img src="../img/1.jpeg" class="rounded-xl" alt="" srcset="">
                 <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div class="w-[80%] flex justify-start gap-3 items-center">
-                            <img src="img/Kolala images/Calm/1.jpeg"
+                            <img src="../img/Kolala images/Calm/1.jpeg"
                                 class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
                             <h3>Lorem ipsum</h3>
                         </div>
@@ -112,11 +93,11 @@
                 </div>
             </div>
             <div class="relative image_container cursor-pointer">
-                <img src="img/2.jpeg" class="rounded-xl" alt="" srcset="">
+                <img src="../img/2.jpeg" class="rounded-xl" alt="" srcset="">
                 <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div class="w-[80%] flex justify-start gap-3 items-center">
-                            <img src="img/Kolala images/Calm/1.jpeg"
+                            <img src="../img/Kolala images/Calm/1.jpeg"
                                 class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
                             <h3>Lorem ipsum</h3>
                         </div>
@@ -134,11 +115,11 @@
                 </div>
             </div>
             <div class="relative image_container cursor-pointer">
-                <img src="img/Kolala images/Couples/1.jpeg" class="rounded-xl" alt="" srcset="">
+                <img src="../img/Kolala images/Couples/1.jpeg" class="rounded-xl" alt="" srcset="">
                 <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div class="w-[80%] flex justify-start gap-3 items-center">
-                            <img src="img/Kolala images/Calm/1.jpeg"
+                            <img src="../img/Kolala images/Calm/1.jpeg"
                                 class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
                             <h3>Lorem ipsum</h3>
                         </div>
@@ -156,11 +137,11 @@
                 </div>
             </div>
             <div class="relative image_container cursor-pointer">
-                <img src="img/Kolala images/Couples/2.jpeg" class="rounded-xl" alt="" srcset="">
+                <img src="../img/Kolala images/Couples/2.jpeg" class="rounded-xl" alt="" srcset="">
                 <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div class="w-[80%] flex justify-start gap-3 items-center">
-                            <img src="img/Kolala images/Calm/1.jpeg"
+                            <img src="../img/Kolala images/Calm/1.jpeg"
                                 class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
                             <h3>Lorem ipsum</h3>
                         </div>
@@ -178,11 +159,11 @@
                 </div>
             </div>
             <div class="relative image_container cursor-pointer">
-                <img src="img/Kolala images/Couples/3.jpeg" class="rounded-xl" alt="" srcset="">
+                <img src="../img/Kolala images/Couples/3.jpeg" class="rounded-xl" alt="" srcset="">
                 <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div class="w-[80%] flex justify-start gap-3 items-center">
-                            <img src="img/Kolala images/Calm/1.jpeg"
+                            <img src="../img/Kolala images/Calm/1.jpeg"
                                 class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
                             <h3>Lorem ipsum</h3>
                         </div>
@@ -200,11 +181,11 @@
                 </div>
             </div>
             <div class="relative image_container cursor-pointer">
-                <img src="img/Kolala images/Couples/4.jpeg" class="rounded-xl" alt="" srcset="">
+                <img src="../img/Kolala images/Couples/4.jpeg" class="rounded-xl" alt="" srcset="">
                 <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div class="w-[80%] flex justify-start gap-3 items-center">
-                            <img src="img/Kolala images/Calm/1.jpeg"
+                            <img src="../img/Kolala images/Calm/1.jpeg"
                                 class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
                             <h3>Lorem ipsum</h3>
                         </div>
@@ -222,11 +203,11 @@
                 </div>
             </div>
             <div class="relative image_container cursor-pointer">
-                <img src="img/Kolala images/Couples/5.jpeg" class="rounded-xl" alt="" srcset="">
+                <img src="../img/Kolala images/Couples/5.jpeg" class="rounded-xl" alt="" srcset="">
                 <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div class="w-[80%] flex justify-start gap-3 items-center">
-                            <img src="img/Kolala images/Calm/1.jpeg"
+                            <img src="../img/Kolala images/Calm/1.jpeg"
                                 class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
                             <h3>Lorem ipsum</h3>
                         </div>
@@ -244,11 +225,11 @@
                 </div>
             </div>
             <div class="relative image_container cursor-pointer">
-                <img src="img/Kolala images/Couples/6.jpeg" class="rounded-xl" alt="" srcset="">
+                <img src="../img/Kolala images/Couples/6.jpeg" class="rounded-xl" alt="" srcset="">
                 <div class="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div class="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div class="w-[80%] flex justify-start gap-3 items-center">
-                            <img src="img/Kolala images/Calm/1.jpeg"
+                            <img src="../img/Kolala images/Calm/1.jpeg"
                                 class="rounded-full object-cover max-h-[40px] w-[40px]" alt="">
                             <h3>Lorem ipsum</h3>
                         </div>
@@ -267,10 +248,13 @@
             </div>
         </div>
     </section>
+
     <footer class="bg-light-text">
         <div class="w-[90%] mx-auto flex justify-between items-center py-10">
             <div class="text-headers ">
-                <a href=""><h1 class="font-logo text-4xl mb-3">Kolala pic</h1></a>
+                <a href="">
+                    <h1 class="font-logo text-4xl mb-3">Kolala pic</h1>
+                </a>
                 <div class="flex justify-center items-center text-2xl gap-10">
                     <a href=""><i class="fa-brands fa-facebook"></i></a>
                     <a href=""><i class="fa-brands fa-instagram"></i></a>
@@ -289,9 +273,9 @@
             </div>
         </div>
     </footer>
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

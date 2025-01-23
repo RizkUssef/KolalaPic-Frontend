@@ -41,19 +41,9 @@ $().ready(function () {
 
 
     // second section from nav
-    let like_offset = $('#like_more').offset().top;
-    // console.log(like_offset);
-
-    // how much nav down
-    $(window).on("scroll", function () {
-        let scroll = $(this).scrollTop();
-        if (scroll > like_offset) {
-            $('#nav').css({ "background-color": "#B3C8CF" })
-        } else {
-            $('#nav').css({ "background-color": "transparent" })
-
-        }
-    })
+    // let like_offset = $('#like_more').offset().top;
+    let profile_offset = $('#profile').offset().top;
+    navBG(profile_offset)
 
     // search show
     $('#search_btn').on('click', function (e) {
@@ -61,4 +51,26 @@ $().ready(function () {
         $('#search_input').removeClass("hidden").addClass("flex")
     });
 
+
+    $('.profile_ico').on("click",function () {
+        $('.profile_ico').css("background-color", "#F1F0E8");
+        $(this).css("background-color", "white");
+    })
+
 });
+
+
+function navBG(offset){
+    $(window).on("scroll", function () {
+        let scroll = $(this).scrollTop();
+        if (scroll > offset) {
+            $('.nav').css({ "background-color": "#B3C8CF" })
+        } else {
+            $('.nav').css({ "background-color": "transparent" })
+
+        }
+    })
+}
+
+
+// console.log($('#profile').offset().top);
