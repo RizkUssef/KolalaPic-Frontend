@@ -38,14 +38,23 @@
         <div class="flex justify-between items-center mb-20">
             <h1 class="font-primary text-[50px]">OTP</h1>
         </div>
-        <form action="" class="w-1/2 mx-auto flex flex-col justify-center items-center gap-4">
-            <div class="w-full flex flex-col justify-center items-center gap-3">
-                <label class="self-start" for="otp">OTP</label>
-                <input type="text" name="otp" id="otp" class="p-2 w-full focus:outline-none focus:border-2 foucus:border-heeader rounded-xl">
-            </div>
-            <!-- <a class="self-end" href="#">Forget Password?</a> -->
-            <button class="py-2 px-10 bg-light-text rounded-xl" type="submit">Submit</button>
-        </form>
+        <div class="w-1/2 mx-auto  bg-white p-10 rounded-2xl drop-shadow-main">
+            <form
+                class=" form-all"
+                action="" method="post">
+                <div class="w-full flex flex-col justify-center items-start gap-2">
+                    <label class="w-full" for="otp">OTP</label>
+                    <input
+                        class="input-all"
+                        type="text" name="" id="otp">
+                </div>
+                <div class="self-end mt-3">
+                    <button
+                        class="transition-all duration-500 bg-bg px-3 py-2 rounded-2xl hover:bg-headers hover:text-bg"
+                        type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
     </section>
 
     <footer class="bg-light-text">

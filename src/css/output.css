@@ -656,9 +656,8 @@ video {
   margin-bottom: 2.5rem;
 }
 
-.my-auto {
-  margin-top: auto;
-  margin-bottom: auto;
+.mb-20 {
+  margin-bottom: 5rem;
 }
 
 .mb-3 {
@@ -685,16 +684,16 @@ video {
   margin-top: 1.25rem;
 }
 
+.mb-0 {
+  margin-bottom: 0px;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
 
 .mb-1 {
   margin-bottom: 0.25rem;
-}
-
-.mb-20 {
-  margin-bottom: 5rem;
 }
 
 .block {
@@ -745,36 +744,16 @@ video {
   height: 100vh;
 }
 
-.h-\[300px\] {
-  height: 300px;
-}
-
-.h-\[509px\] {
-  height: 509px;
-}
-
 .h-\[70vh\] {
   height: 70vh;
 }
 
-.h-full {
-  height: 100%;
-}
-
-.h-\[\] {
-  height: ;
-}
-
-.h-\[1\] {
-  height: 1;
-}
-
-.h-\[100\] {
-  height: 100;
-}
-
 .max-h-\[40px\] {
   max-height: 40px;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-24 {
@@ -789,32 +768,12 @@ video {
   width: 18rem;
 }
 
-.w-\[100\%\] {
-  width: 100%;
-}
-
-.w-\[30\%\] {
-  width: 30%;
-}
-
 .w-\[40px\] {
   width: 40px;
 }
 
-.w-\[41\.5\%\] {
-  width: 41.5%;
-}
-
 .w-\[50\%\] {
   width: 50%;
-}
-
-.w-\[60\%\] {
-  width: 60%;
-}
-
-.w-\[65\%\] {
-  width: 65%;
 }
 
 .w-\[70\%\] {
@@ -840,18 +799,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-5 {
-  width: 1.25rem;
-}
-
-.w-1 {
-  width: 0.25rem;
-}
-
-.w-1\/2 {
-  width: 50%;
 }
 
 .-translate-x-1\/2 {
@@ -917,6 +864,10 @@ video {
   gap: 0.75rem;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .gap-5 {
   gap: 1.25rem;
 }
@@ -925,20 +876,12 @@ video {
   gap: 1.75rem;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
 .self-start {
   align-self: flex-start;
 }
 
 .self-end {
   align-self: flex-end;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 .rounded-2xl {
@@ -955,22 +898,6 @@ video {
 
 .rounded-xl {
   border-radius: 0.75rem;
-}
-
-.rounded-bl-2xl {
-  border-bottom-left-radius: 1rem;
-}
-
-.rounded-br-2xl {
-  border-bottom-right-radius: 1rem;
-}
-
-.rounded-tl-2xl {
-  border-top-left-radius: 1rem;
-}
-
-.rounded-tr-2xl {
-  border-top-right-radius: 1rem;
 }
 
 .border {
@@ -1009,11 +936,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-headers {
-  --tw-bg-opacity: 1;
-  background-color: rgb(104 137 144 / var(--tw-bg-opacity, 1));
-}
-
 .bg-animals {
   background-image: url('/src/img/Kolala images/Animals/bg.jpg');
 }
@@ -1034,14 +956,13 @@ video {
   background-position: center;
 }
 
-.object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.p-10 {
+  padding: 2.5rem;
 }
 
 .p-2 {
@@ -1054,6 +975,11 @@ video {
 
 .p-5 {
   padding: 1.25rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .px-3 {
@@ -1074,16 +1000,6 @@ video {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
 }
 
 .pb-\[50px\] {
@@ -1245,6 +1161,61 @@ video {
   border-color: rgb(104 137 144 / var(--tw-border-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(104 137 144 / var(--tw-text-opacity, 1));
+}
+
+.form-all {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.25rem;
+  font-family: Itim, serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.input-all {
+  width: 100%;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 240 232 / var(--tw-bg-opacity, 1));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.input-all:focus {
+  border-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(104 137 144 / var(--tw-border-opacity, 1));
+}
+
+.submit-all {
+  border-radius: 1rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 240 232 / var(--tw-bg-opacity, 1));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.submit-all:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(104 137 144 / var(--tw-bg-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(241 240 232 / var(--tw-text-opacity, 1));
 }
 
 .hover\:border-headers:hover {

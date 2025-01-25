@@ -7,41 +7,50 @@
     <title>Register</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kablammo&family=Keania+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kablammo&family=Keania+One&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../../css/output.css">
 </head>
-    <body class="bg-bg ">
-        <section class="font-primary text-5xl text-headers w-[85%] mx-auto mt-10">
-            <h1>Register</h1>
-            <div class="flex justify-center items-center mt-10 drop-shadow-main">
-                <div class="w-[41.5%] h-[509px] rounded-tl-2xl rounded-bl-2xl">
-                    <img class="w-[100%] object-cover rounded-tl-2xl rounded-bl-2xl" src="../img/Kolala images/Calm/7.jpeg" alt="" srcset="">
+
+<body class="bg-bg ">
+    <section class="font-primary text-5xl text-headers w-[85%] mx-auto mt-10">
+        <h1>Register</h1>
+        <div class="w-1/2 mx-auto  bg-white p-10 rounded-2xl drop-shadow-main">
+            <form
+                class=" text-2xl font-secondary flex flex-col justify-center items-start gap-5 transition-all duration-500"
+                action="" method="post">
+                <div class="w-full flex flex-col justify-center items-start gap-2">
+                    <label class="w-full" for="">Name</label>
+                    <input
+                        class="bg-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers"
+                        type="text" name="" id="">
                 </div>
-                <div class="w-[65%] h-[509px] bg-white py-4 rounded-tr-2xl rounded-br-2xl">
-                    <form class="w-[80%] mx-auto text-2xl font-secondary flex flex-col justify-center items-start gap-5 transition-all duration-500" action="" method="post">
-                        <div class="w-full flex flex-col justify-center items-start gap-2">
-                            <label class="w-full" for="">Name</label>
-                            <input class="bg-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers" type="text" name="" id="">
-                        </div>
-                        <div class="w-full flex flex-col justify-center items-start gap-2">
-                            <label class="w-full" for="">Email</label>
-                            <input class="bg-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers" type="email" name="" id="">
-                        </div>
-                        <div class="w-full flex flex-col justify-center items-start gap-2">
-                            <label class="w-full" for="">Password</label>
-                            <input class="bg-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers" type="password" name="" id="">
-                        </div>
-                        <div class="w-full flex flex-col justify-center items-start gap-2">
-                            <label class="w-full" for="">Password Confirmation</label>
-                            <input class="bg-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers" type="password" name="" id="">
-                        </div>
-                        <div class="self-end mt-3">
-                            <button class="transition-all duration-500 bg-bg px-3 py-2 rounded-2xl hover:bg-headers hover:text-bg" type="submit">Submit</button>
-                        </div>
-                    </form>
+                <div class="w-full flex flex-col justify-center items-start gap-2">
+                    <label class="w-full" for="">Email</label>
+                    <input
+                        class="bg-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers"
+                        type="email" name="" id="">
                 </div>
-            </div>
-        </section>
+                <div class="w-full flex flex-col justify-center items-start gap-2">
+                    <label class="w-full" for="">Password</label>
+                    <input
+                        class="bg-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers"
+                        type="password" name="" id="">
+                </div>
+                <div class="w-full flex flex-col justify-center items-start gap-2">
+                    <label class="w-full" for="">Password Confirmation</label>
+                    <input
+                        class="bg-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers"
+                        type="password" name="" id="">
+                </div>
+                <div class="self-end mt-3">
+                    <button
+                        class="transition-all duration-500 bg-bg px-3 py-2 rounded-2xl hover:bg-headers hover:text-bg"
+                        type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
 </body>
 
 </html>
