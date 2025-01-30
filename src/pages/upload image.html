@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
+    <title>Upload</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,27 +34,32 @@
             </div>
         </div>
     </nav>
-    <section id="profile" class="profile block h-[100vh] py-10  pt-[100px] w-[90%] mx-auto font-secondary text-headers">
-        <div class="flex justify-between items-center mb-20">
-            <h1 class="font-primary text-[50px]">Edit Profile</h1>
+    <section id="profile" class="profile block  py-10  pt-[100px] w-[90%] mx-auto font-secondary text-headers">
+        <div class="flex justify-between items-center mb-10">
+            <h1 class="font-primary text-[50px]">Uploade File</h1>
         </div>
         <div class="mt-10 w-1/2 mx-auto  bg-white p-10 rounded-2xl drop-shadow-main">
             <form action="" class="form-all">
-                <div class="self-start relative w-24 h-24 mb-3">
-                    <img src="../img/2.jpeg"
-                        class=" absolute top-0 left-0 right-0 bottom-0 rounded-full border-4 border-white" alt="">
-                    <label for="file"
-                        class="cursor-pointer absolute top-[88%] left-[88%] -translate-x-1/2 -translate-y-1/2">
-                        <i
-                            class="fa-solid fa-camera-retro text-xl p-2 bg-bg border-4 border-white rounded-full hover:bg-white transition-all duration-500"></i>
-                    </label>
-                    <input class="hidden" type="file" name="file" id="file">
-                </div>
                 <div class="w-full flex flex-col justify-center items-start gap-2">
-                    <label class="w-full" for="name">Name</label>
-                    <input class="input-all" type="name" name="" id="name">
+                    <label class="w-full" for="filename">File Name</label>
+                    <input class="input-all" type="name" name="filename" id="filename">
                 </div>
-                <a class="self-end" href="#">Change Password?</a>
+                <label class="text-2xl text-primary" for="">File</label>
+                <input type="file" name="image" class="input-all file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-white file:text-headers file:text-secondary cursor-pointer file:cursor-pointer hover:file:bg-violet-100 bg-[#fff]">
+                <label class="text-2xl  text-primary" for="">Description</label>
+                <textarea class="input-all" name="description" id=""></textarea>
+                <div class="w-full flex flex-col justify-center items-start gap-2">
+                    <label class="w-full" for="auther">Auther</label>
+                    <input class="input-all" type="name" name="auther" id="auther">
+                </div>
+                <label class="text-2xl  text-primary" for="category">Category</label>
+                <select class="input-all  selection:bg-secondary" name="category" id="category">
+                    <option selected value="animals">animals</option>
+                    <option value="calm">calm</option>
+                    <option value="couples">couples</option>
+                    <option value="dark">dark</option>
+                    <option value="football">football</option>
+                </select>
                 <div class="self-end mt-3">
                     <button class="submit-all" type="submit">Submit</button>
                 </div>
