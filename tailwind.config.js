@@ -7,6 +7,8 @@ module.exports = {
       "headers":"#688990",
       "light-text":"#B3C8CF",
       "white": "#ffffff",
+      "error":"#D70654",
+      "success":"#497D74",
       "transparent":"transparent",
       "blur":"rgba(0,0,0,0.4)"
     },

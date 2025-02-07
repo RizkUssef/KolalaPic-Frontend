@@ -7,36 +7,36 @@
     <title>Login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kablammo&family=Keania+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kablammo&family=Keania+One&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../../css/output.css">
 </head>
-    <body class="bg-bg ">
-        <section class="font-primary text-5xl text-headers w-[85%] mx-auto mt-10">
-            <h1>Login</h1>
-            <div class="mt-10 w-1/2 mx-auto  bg-white p-10 rounded-2xl drop-shadow-main">
-                <form
-                    class=" form-all"
-                    action="" method="post">
-                    <div class="w-full flex flex-col justify-center items-start gap-2">
-                        <label class="w-full" for="email">Email</label>
-                        <input
-                            class="input-all"
-                            type="email" name="" id="email">
-                    </div>
-                    <div class="w-full flex flex-col justify-center items-start gap-2">
-                        <label class="w-full" for="password">Password</label>
-                        <input
-                            class="input-all"
-                            type="password" name="" id="password">
-                    </div>
-                    <div class="self-end mt-3">
-                        <button
-                            class="submit-all"
-                            type="submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </section>
+
+<body class="bg-bg ">
+    <section class="font-primary text-5xl text-headers w-[85%] mx-auto mt-10">
+        <h1>Login</h1>
+        <div id="response_err" class="response font-secondary bg-error text-2xl p-3 rounded-xl drop-shadow-main hidden text-bg w-1/2 mx-auto"></div>
+        <div id="response_succ" class="response font-secondary bg-success text-2xl p-3 rounded-xl drop-shadow-main hidden text-bg w-1/2 mx-auto"></div>
+        <div class="mt-10 w-1/2 mx-auto  bg-white p-10 rounded-2xl drop-shadow-main">
+            <form class="form-all" method="post" id="login_form">
+                <input type="hidden" name="csrf_login" id="csrf_login" value="">
+                <div class="w-full flex flex-col justify-center items-start gap-2">
+                    <label class="w-full" for="email">Email</label>
+                    <input class="input-all" type="email" name="email" id="email">
+                </div>
+                <div class="w-full flex flex-col justify-center items-start gap-2">
+                    <label class="w-full" for="password">Password</label>
+                    <input class="input-all" type="password" name="password" id="password">
+                </div>
+                <div class="self-end mt-3">
+                    <button class="submit-all" type="submit" name="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="../../js/owl.carousel.min.js"></script>
+    <script src="../../js/script.js"></script>
 </body>
 
 </html>

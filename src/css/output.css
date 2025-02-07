@@ -688,10 +688,6 @@ video {
   margin-top: 1.25rem;
 }
 
-.mb-0 {
-  margin-bottom: 0px;
-}
-
 .block {
   display: block;
 }
@@ -919,9 +915,19 @@ video {
   background-color: rgba(0,0,0,0.4);
 }
 
+.bg-error {
+  --tw-bg-opacity: 1;
+  background-color: rgb(215 6 84 / var(--tw-bg-opacity, 1));
+}
+
 .bg-light-text {
   --tw-bg-opacity: 1;
   background-color: rgb(179 200 207 / var(--tw-bg-opacity, 1));
+}
+
+.bg-success {
+  --tw-bg-opacity: 1;
+  background-color: rgb(73 125 116 / var(--tw-bg-opacity, 1));
 }
 
 .bg-transparent {
