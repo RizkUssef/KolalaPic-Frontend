@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+.logo{
+
+}
+.base-bg{
+    background-color: #F1F0E8;
+}
+.header-color{
+    color: #688990;
+}
+.light-text-color{
+    color: #B3C8CF;
+}
+.error-color{
+    color: #D70654;
+}
+.success-color{
+    color: #497D74;
+}
+.blur-color{
+    color: rgba(0,0,0,0.4);
+}
+.logo-font{
+    font-family: "Kablammo","serif";
+}
+.base-font{
+    font-family: "Keania One","serif";
+}
+.secondary-font{
+    font-family: "Itim","serif";
+}
