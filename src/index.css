@@ -1,16 +1,24 @@
 @import "tailwindcss";
 
-.logo{
-
-}
 .base-bg{
     background-color: #F1F0E8;
 }
 .header-color{
     color: #688990;
 }
+.nav-links:hover{
+    background-color: #688990;
+    color: #B3C8CF;
+ }
+ .active{
+    background-color: #688990;
+    color: #B3C8CF;
+ }
 .light-text-color{
     color: #B3C8CF;
+}
+.bg-text{
+    color: #F1F0E8;
 }
 .error-color{
     color: #D70654;
@@ -30,3 +38,8 @@
 .secondary-font{
     font-family: "Itim","serif";
 }
+.btn-submit:hover{
+    background-color: #688990;
+    color: #F1F0E8;
+}
+
