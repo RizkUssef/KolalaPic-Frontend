@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Dark from './components/Dark/Dark';
 import Home from './components/Home/Home';
+import Profile from './components/Profile/Profile';
 
 export default function App() {
   const router = createBrowserRouter([
@@ -25,6 +26,7 @@ export default function App() {
         { path: "/football", element: <Football /> },
         { path: "/login", element: <Login /> },
         { path: "/register", element: <Register /> },
+        { path: "/profile", element: <Profile /> },
       ],
     },
     { path: "*", element: <h1>ERROR</h1> },

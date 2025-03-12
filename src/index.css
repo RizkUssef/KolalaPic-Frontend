@@ -6,6 +6,9 @@
 .header-color{
     color: #688990;
 }
+.footer-bg{
+    background-color: #B3C8CF;
+}
 .nav-links:hover{
     background-color: #688990;
     color: #B3C8CF;
