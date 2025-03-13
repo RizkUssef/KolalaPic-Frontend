@@ -8,7 +8,7 @@ export default function Register() {
                 <form
                     className=" text-2xl secondary-font flex flex-col justify-center items-start gap-5 transition-all duration-500"
                      method="POST" id="reg_form">
-                    <input id="csrf_register" type="hidden" name="csrf_register" value=""/>
+                    <input id="csrf_register" type="hidden" name="csrf_register" defaultValue=""/>
                     <div className="w-full flex flex-col justify-center items-start gap-2">
                         <label className="w-full" for="">Name</label>
                         <input className="base-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers" type="text" name="name" id="name"/>

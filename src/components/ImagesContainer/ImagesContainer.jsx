@@ -9,10 +9,11 @@ import img7 from "../../assets/Kolala images/Calm/2.jpeg";
 import img8 from "../../assets/Kolala images/Calm/3.jpeg";
 import img9 from "../../assets/Kolala images/Calm/4.jpeg";
 import img10 from "../../assets/Kolala images/Calm/5.jpeg";
+import { Link } from "react-router-dom";
 
-export default function ImagesContainer() {
-  const [show,setShow] = useState("none");
-
+export default function ImagesContainer({ catName, data }) {
+  const [show, setShow] = useState("none");
+  // console.log(data);
   return (
     <>
       <section
@@ -20,7 +21,7 @@ export default function ImagesContainer() {
         className="w-[80%] like mx-auto header-color secondary-font py-10  transition-all duration-500"
       >
         <div className="flex justify-between items-center ">
-          <h1 className="base-font text-[50px]">More Like</h1>
+          <h1 className="base-font text-[50px]">{catName}</h1>
           <form
             action=""
             method="post"
@@ -29,7 +30,7 @@ export default function ImagesContainer() {
             <input
               id="search_input"
               type="text"
-              value=""
+              defaultValue=""
               className="hidden text-headers font-secondary text-xl bg-white rounded-xl focus:outline-none focus:border-2 focus:border-headers p-3"
             />
             <button
@@ -41,35 +42,54 @@ export default function ImagesContainer() {
             </button>
           </form>
         </div>
-        <div id="all" className="columns-2 mt-5 [&>div]:mb-5 lg:columns-3 xl:columns-4 text-bg font-secondary ">
-          <div onMouseEnter={()=>setShow("")} onMouseLeave={()=>setShow("none")} className="relative image_container cursor-pointer img_to_go block">
-            <img src={img1} className="rounded-xl" alt="img" srcset="" />
-            <div style={{display : show}} className="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl">
-              <div className="flex justify-between items-center absolute top-3 right-3 w-[90%]">
-                <div className="w-[80%] flex justify-start gap-3 items-center">
-                  <img
-                    src={img2}
-                    className="rounded-full object-cover max-h-[40px] w-[40px]"
-                    alt="img"
-                  />
-                  <h3>pop</h3>
+        <div
+          id="all"
+          className="columns-2 mt-5 lg:columns-3 xl:columns-4 text-bg font-secondary "
+        >
+          {data.map((data) => (
+            <Link key={data._id.$oid} className="mb-5" to={`/one photo/${data._id.$oid}`}>
+              <div
+                onMouseEnter={() => setShow("")}
+                onMouseLeave={() => setShow("none")}
+                className="relative mb-5 image_container cursor-pointer img_to_go block"
+              >
+                <img
+                  src={`http://localhost/KolalaPic/public/uploads/${data.file}`}
+                  className="rounded-xl w-full"
+                  alt="img"
+                />
+                <div
+                  style={{ display: show }}
+                  className="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.4)] rounded-xl text-xl"
+                >
+                  <div className="flex justify-between items-center absolute top-3 right-3 w-[90%]">
+                    <div className="w-[80%] flex justify-start gap-3 items-center">
+                      <img
+                        src={`http://localhost/KolalaPic/public/uploads/${data.file}`}
+                        className="rounded-full object-cover max-h-[40px] w-[40px]"
+                        alt="img"
+                      />
+                      <h3 className="capitalize">{data.auther}</h3>
+                    </div>
+                    <a href="">
+                      <i className="fa-regular fa-bookmark save"></i>
+                    </a>
+                  </div>
+                  <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
+                    <div>
+                      <h3 className="text-2xl capitalize">{data.title}</h3>
+                    </div>
+                    <div>
+                      <i className="fa-solid fa-share share mr-3"></i>
+                      <i className="fa-regular fa-heart heart"></i>
+                    </div>
+                  </div>
                 </div>
-                <a href="">
-                  <i className="fa-regular fa-bookmark save"></i>
-                </a>
               </div>
-              <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
-                <div>
-                  <h3 className="text-2xl">lokoil</h3>
-                </div>
-                <div>
-                  <i className="fa-solid fa-share share mr-3"></i>
-                  <i className="fa-regular fa-heart heart"></i>
-                </div>
-              </div>
-            </div>
-          </div>
+            </Link>
+          ))}
         </div>
+        {/* <p>{data.title}</p> */}
       </section>
     </>
   );

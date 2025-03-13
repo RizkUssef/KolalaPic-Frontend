@@ -7,6 +7,7 @@ import img2 from "../../assets/Kolala images/Calm/bg.jpg"
 import img3 from "../../assets/Kolala images/Couples/bg.jpg"
 import img4 from "../../assets/Kolala images/Dark/bg.jpg"
 import img5 from "../../assets/Kolala images/Football/bg.jpg"
+import { Link } from "react-router-dom";
 
 
 export default function CategorySlider() {
@@ -30,12 +31,12 @@ export default function CategorySlider() {
             <div className="relative h-[100%]">
               <div className="absolute z-[999999] top-[33%] left-[10%]">
                 <h1 className="font-primary text-[70px] mb-5">Animals</h1>
-                <a
-                  href=""
+                <Link
+                  to="/animals"
                   className="float-end transition-all duration-500 hover:text-headers hover:border-headers"
                 >
                   Show All<i className="fa-solid fa-arrow-right"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </section>
@@ -46,12 +47,12 @@ export default function CategorySlider() {
             <div className="relative h-[100%]">
               <div className="absolute z-[999999] top-[33%] left-[10%]">
                 <h1 className="font-primary text-[70px] mb-5">Calm</h1>
-                <a
-                  href=""
+                <Link
+                  to="/calm"
                   className="float-end transition-all duration-500 hover:text-headers hover:border-headers"
                 >
                   Show All<i className="fa-solid fa-arrow-right"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </section>
@@ -62,12 +63,12 @@ export default function CategorySlider() {
             <div className="relative h-[100%]">
               <div className="absolute z-[999999] top-[33%] left-[10%]">
                 <h1 className="font-primary text-[70px] mb-5">Couples</h1>
-                <a
-                  href=""
+                <Link
+                  to="/couple"
                   className="float-end transition-all duration-500 hover:text-headers hover:border-headers"
                 >
                   Show All<i className="fa-solid fa-arrow-right"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </section>
@@ -78,12 +79,12 @@ export default function CategorySlider() {
             <div className="relative h-[100%]">
               <div className="absolute z-[999999] top-[33%] left-[10%]">
                 <h1 className="font-primary text-[70px] mb-5">Dark</h1>
-                <a
-                  href=""
+                <Link
+                  to="/dark"
                   className="float-end transition-all duration-500 hover:text-headers hover:border-headers"
                 >
                   Show All<i className="fa-solid fa-arrow-right"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </section>
@@ -94,12 +95,12 @@ export default function CategorySlider() {
             <div className="relative h-[100%]">
               <div className="absolute z-[999999] top-[33%] left-[10%]">
                 <h1 className="font-primary text-[70px] mb-5">Football</h1>
-                <a
-                  href=""
+                <Link
+                  to="/football"
                   className="float-end transition-all duration-500 hover:text-headers hover:border-headers"
                 >
                   Show All<i className="fa-solid fa-arrow-right"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </section>

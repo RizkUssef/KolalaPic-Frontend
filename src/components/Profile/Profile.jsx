@@ -43,7 +43,7 @@ export default function Profile() {
         </div>
         <div className="columns-2 mt-10 [&>div]:mb-5 lg:columns-3 xl:columns-4 text-bg secondary-font ">
             <div className="relative image_container cursor-pointer">
-                <img src={img6} className="rounded-xl" alt="" srcset=""/>
+                <img src={img6} className="rounded-xl" alt="" srcSet=""/>
                 <div className="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div className="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div className="w-[80%] flex justify-start gap-3 items-center">
@@ -65,7 +65,7 @@ export default function Profile() {
                 </div>
             </div>
             <div className="relative image_container cursor-pointer">
-                <img src="../img/2.jpeg" className="rounded-xl" alt="" srcset=""/>
+                <img src="../img/2.jpeg" className="rounded-xl" alt="" srcSet=""/>
                 <div className="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div className="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div className="w-[80%] flex justify-start gap-3 items-center">
@@ -87,7 +87,7 @@ export default function Profile() {
                 </div>
             </div>
             <div className="relative image_container cursor-pointer">
-                <img src="../img/Kolala images/Couples/1.jpeg" className="rounded-xl" alt="" srcset=""/>
+                <img src="../img/Kolala images/Couples/1.jpeg" className="rounded-xl" alt="" srcSet=""/>
                 <div className="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div className="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div className="w-[80%] flex justify-start gap-3 items-center">
@@ -109,7 +109,7 @@ export default function Profile() {
                 </div>
             </div>
             <div className="relative image_container cursor-pointer">
-                <img src="../img/Kolala images/Couples/2.jpeg" className="rounded-xl" alt="" srcset=""/>
+                <img src="../img/Kolala images/Couples/2.jpeg" className="rounded-xl" alt="" srcSet=""/>
                 <div className="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div className="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div className="w-[80%] flex justify-start gap-3 items-center">
@@ -131,7 +131,7 @@ export default function Profile() {
                 </div>
             </div>
             <div className="relative image_container cursor-pointer">
-                <img src="../img/Kolala images/Couples/3.jpeg" className="rounded-xl" alt="" srcset=""/>
+                <img src="../img/Kolala images/Couples/3.jpeg" className="rounded-xl" alt="" srcSet=""/>
                 <div className="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div className="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div className="w-[80%] flex justify-start gap-3 items-center">
@@ -153,7 +153,7 @@ export default function Profile() {
                 </div>
             </div>
             <div className="relative image_container cursor-pointer">
-                <img src="../img/Kolala images/Couples/4.jpeg" className="rounded-xl" alt="" srcset=""/>
+                <img src="../img/Kolala images/Couples/4.jpeg" className="rounded-xl" alt="" srcSet=""/>
                 <div className="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div className="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div className="w-[80%] flex justify-start gap-3 items-center">
@@ -175,7 +175,7 @@ export default function Profile() {
                 </div>
             </div>
             <div className="relative image_container cursor-pointer">
-                <img src="../img/Kolala images/Couples/5.jpeg" className="rounded-xl" alt="" srcset=""/>
+                <img src="../img/Kolala images/Couples/5.jpeg" className="rounded-xl" alt="" srcSet=""/>
                 <div className="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div className="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div className="w-[80%] flex justify-start gap-3 items-center">
@@ -197,7 +197,7 @@ export default function Profile() {
                 </div>
             </div>
             <div className="relative image_container cursor-pointer">
-                <img src="../img/Kolala images/Couples/6.jpeg" className="rounded-xl" alt="" srcset=""/>
+                <img src="../img/Kolala images/Couples/6.jpeg" className="rounded-xl" alt="" srcSet=""/>
                 <div className="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-blur rounded-xl text-xl hidden">
                     <div className="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                         <div className="w-[80%] flex justify-start gap-3 items-center">

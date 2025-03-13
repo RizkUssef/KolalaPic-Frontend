@@ -22,11 +22,11 @@ export default function UploadImage() {
                 </div>
                 <label className="text-2xl  text-primary" for="category">Category</label>
                 <select className="base-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers  selection:bg-secondary" name="category" id="category">
-                    <option selected value="animals">animals</option>
-                    <option value="calm">calm</option>
-                    <option value="couples">couples</option>
-                    <option value="dark">dark</option>
-                    <option value="football">football</option>
+                    <option selected defaultValue="animals">animals</option>
+                    <option defaultValue="calm">calm</option>
+                    <option defaultValue="couples">couples</option>
+                    <option defaultValue="dark">dark</option>
+                    <option defaultValue="football">football</option>
                 </select>
                 <div className="self-end mt-3">
                     <button className="cursor-pointer transition-all duration-500 base-bg px-3 py-2 rounded-2xl btn-submit" type="submit">Submit</button>
