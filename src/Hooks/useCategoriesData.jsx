@@ -7,7 +7,7 @@ import { useQuery } from "react-query";
 
 export default function useCategoriesData(cate) {
   function getCategory() {
-    console.log(cate);
+    // console.log(cate);
     return axios.get(
       `http://localhost/KolalaPic/public/apiShowAll/showAll?category=${cate}`
     );

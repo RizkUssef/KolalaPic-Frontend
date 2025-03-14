@@ -1,19 +1,7 @@
-import React, { useEffect, useState } from "react";
-import img1 from "../../assets/Kolala images/Animals/Bears/1.jpg";
-import img2 from "../../assets/Kolala images/Animals/Bears/2.jpeg";
-import img3 from "../../assets/Kolala images/Animals/Bears/3.jpeg";
-import img4 from "../../assets/Kolala images/Animals/Bears/4.jpeg";
-import img5 from "../../assets/Kolala images/Animals/Bears/5.jpeg";
-import img6 from "../../assets/Kolala images/Calm/1.jpeg";
-import img7 from "../../assets/Kolala images/Calm/2.jpeg";
-import img8 from "../../assets/Kolala images/Calm/3.jpeg";
-import img9 from "../../assets/Kolala images/Calm/4.jpeg";
-import img10 from "../../assets/Kolala images/Calm/5.jpeg";
+import React from "react";
 import { Link } from "react-router-dom";
 
 export default function ImagesContainer({ catName, data }) {
-  const [show, setShow] = useState("none");
-  // console.log(data);
   return (
     <>
       <section
@@ -44,13 +32,11 @@ export default function ImagesContainer({ catName, data }) {
         </div>
         <div
           id="all"
-          className="columns-2 mt-5 lg:columns-3 xl:columns-4 text-bg font-secondary "
+          className="columns-2 text-[#B3C8CF] mt-5 lg:columns-3 xl:columns-4 text-bg font-secondary "
         >
           {data.map((data) => (
             <Link key={data._id.$oid} className="mb-5" to={`/one photo/${data._id.$oid}`}>
               <div
-                onMouseEnter={() => setShow("")}
-                onMouseLeave={() => setShow("none")}
                 className="relative mb-5 image_container cursor-pointer img_to_go block"
               >
                 <img
@@ -59,8 +45,7 @@ export default function ImagesContainer({ catName, data }) {
                   alt="img"
                 />
                 <div
-                  style={{ display: show }}
-                  className="image_overlay absolute top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.4)] rounded-xl text-xl"
+                  className="absolute inset-0 bg-[rgba(0,0,0,0.4)]  flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg"
                 >
                   <div className="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                     <div className="w-[80%] flex justify-start gap-3 items-center">
@@ -71,9 +56,7 @@ export default function ImagesContainer({ catName, data }) {
                       />
                       <h3 className="capitalize">{data.auther}</h3>
                     </div>
-                    <a href="">
                       <i className="fa-regular fa-bookmark save"></i>
-                    </a>
                   </div>
                   <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
                     <div>

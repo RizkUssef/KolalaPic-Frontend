@@ -1,11 +1,10 @@
 import React from "react";
 import img6 from "../../assets/Kolala images/Calm/1.jpeg";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import axios from "axios";
 import { InfinitySpin } from "react-loader-spinner";
 import Footer from "../Footer/Footer";
-// import { isError } from './../../../node_modules/react-query/es/core/utils';
 
 export default function Onephoto() {
   const { id } = useParams();
@@ -18,7 +17,6 @@ export default function Onephoto() {
     queryKey: ["photo", id],
     queryFn: getOne,
   });
-//   console.log(data.data.title);
   if (isLoading) {
     return (
       <>
@@ -54,20 +52,20 @@ export default function Onephoto() {
               alt="img"
             />
             <div className="actions flex flex-col gap-5 absolute top-1/2 left-full -translate-x-1/2 -translate-y-1/2">
-              <a href="">
+              <Link to="">
                 <i className="fa-regular fa-bookmark p-5 base-bg border-4 border-white rounded-full"></i>
-              </a>
-              <a href="">
+              </Link>
+              <Link to="">
                 <i className="fa-solid fa-share p-5 base-bg border-4 border-white rounded-full"></i>
-              </a>
-              <a href="">
+              </Link>
+              <Link to="">
                 <i className="fa-regular fa-heart p-5 base-bg border-4 border-white rounded-full"></i>
-              </a>
+              </Link>
             </div>
             <div className="download absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <a href="">
+              <Link to="">
                 <i className="fa-solid fa-download p-5 base-bg border-4 border-white rounded-full"></i>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="secondary-font my-10">

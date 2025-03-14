@@ -20,7 +20,7 @@ export default function ChangePassword() {
                     <label className="w-full" for="password">New Password Confirmation</label>
                     <input className="base-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers" type="password" name="" id="password"/>
                 </div>
-                <a className="self-end" href="#">Forget Password?</a>
+                <Link to='/forget password' className="self-end" >Forget Password?</Link>
 
                 <div className="self-end mt-3">
                     <button className="cursor-pointer transition-all duration-500 base-bg px-3 py-2 rounded-2xl btn-submit" type="submit">Submit</button>

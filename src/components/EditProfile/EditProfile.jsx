@@ -1,5 +1,6 @@
 import React from 'react'
 import img6 from "../../assets/2.jpeg";
+import { Link } from 'react-router-dom';
 
 export default function EditProfile() {
   return <>
@@ -22,7 +23,7 @@ export default function EditProfile() {
                     <label className="w-full" for="name">Name</label>
                     <input className="base-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers" type="name" name="" id="name"/>
                 </div>
-                <a className="self-end" href="#">Change Password?</a>
+                <Link className="self-end" to="#">Change Password?</Link>
                 <div className="self-end mt-3">
                     <button className="cursor-pointer transition-all duration-500 base-bg px-3 py-2 rounded-2xl btn-submit" type="submit">Submit</button>
                 </div>

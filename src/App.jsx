@@ -24,7 +24,7 @@ export default function App() {
       path: "",
       element: <Layout />,
       children: [
-        { path: "/home", element: <Home /> },
+        { path: "", element: <Home /> },
         { path: "/animals", element: <Animal /> },
         { path: "/calm", element: <Calm /> },
         { path: "/couples", element: <Couple /> },

@@ -3,6 +3,7 @@ import img6 from "../../assets/Kolala images/Calm/1.jpeg";
 import img1 from "../../assets/Kolala images/Calm/2.jpeg";
 import img2 from "../../assets/Kolala images/Animals/Lions/11.jpeg";
 import img3 from "../../assets/Kolala images/Dark/5.jpeg";
+import { Link } from 'react-router-dom';
 
 
 export default function Profile() {
@@ -10,8 +11,8 @@ export default function Profile() {
       <section id="profile" className="profile block py-10  pt-[100px] w-[90%] mx-auto secondary-font">
         <div className="flex justify-between items-center header-color ">
             <h1 className="base-font text-[50px]">Profile</h1>
-            <a href="" id="search_btn" type="submit" className="text-lg lg:p-4 lg:text-xl slider_btn">
-                <i className="fa-regular fa-pen-to-square"></i></a>
+            <Link to="" id="search_btn" type="submit" className="text-lg lg:p-4 lg:text-xl slider_btn">
+                <i className="fa-regular fa-pen-to-square"></i></Link>
         </div>
         <div className="flex justify-start items-center gap-7 mt-10">
             <img className="w-32 h-32 rounded-full border-4 border-white" src={img2} alt=""/>
@@ -51,7 +52,7 @@ export default function Profile() {
                                 className="rounded-full object-cover max-h-[40px] w-[40px]" alt=""/>
                             <h3>Lorem ipsum</h3>
                         </div>
-                        <a href=""><i className="fa-regular fa-bookmark save"></i></a>
+                        <Link to=""><i className="fa-regular fa-bookmark save"></i></Link>
                     </div>
                     <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
                         <div>
@@ -73,7 +74,7 @@ export default function Profile() {
                                 className="rounded-full object-cover max-h-[40px] w-[40px]" alt=""/>
                             <h3>Lorem ipsum</h3>
                         </div>
-                        <a href=""><i className="fa-regular fa-bookmark save"></i></a>
+                        <Link to=""><i className="fa-regular fa-bookmark save"></i></Link>
                     </div>
                     <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
                         <div>
@@ -95,7 +96,7 @@ export default function Profile() {
                                 className="rounded-full object-cover max-h-[40px] w-[40px]" alt=""/>
                             <h3>Lorem ipsum</h3>
                         </div>
-                        <a href=""><i className="fa-regular fa-bookmark save"></i></a>
+                        <Link to=""><i className="fa-regular fa-bookmark save"></i></Link>
                     </div>
                     <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
                         <div>
@@ -117,7 +118,7 @@ export default function Profile() {
                                 className="rounded-full object-cover max-h-[40px] w-[40px]" alt=""/>
                             <h3>Lorem ipsum</h3>
                         </div>
-                        <a href=""><i className="fa-regular fa-bookmark save"></i></a>
+                        <Link to=""><i className="fa-regular fa-bookmark save"></i></Link>
                     </div>
                     <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
                         <div>
@@ -139,7 +140,7 @@ export default function Profile() {
                                 className="rounded-full object-cover max-h-[40px] w-[40px]" alt=""/>
                             <h3>Lorem ipsum</h3>
                         </div>
-                        <a href=""><i className="fa-regular fa-bookmark save"></i></a>
+                        <Link to=""><i className="fa-regular fa-bookmark save"></i></Link>
                     </div>
                     <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
                         <div>
@@ -161,7 +162,7 @@ export default function Profile() {
                                 className="rounded-full object-cover max-h-[40px] w-[40px]" alt=""/>
                             <h3>Lorem ipsum</h3>
                         </div>
-                        <a href=""><i className="fa-regular fa-bookmark save"></i></a>
+                        <Link to=""><i className="fa-regular fa-bookmark save"></i></Link>
                     </div>
                     <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
                         <div>
@@ -183,7 +184,7 @@ export default function Profile() {
                                 className="rounded-full object-cover max-h-[40px] w-[40px]" alt=""/>
                             <h3>Lorem ipsum</h3>
                         </div>
-                        <a href=""><i className="fa-regular fa-bookmark save"></i></a>
+                        <Link to=""><i className="fa-regular fa-bookmark save"></i></Link>
                     </div>
                     <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
                         <div>
@@ -205,7 +206,7 @@ export default function Profile() {
                                 className="rounded-full object-cover max-h-[40px] w-[40px]" alt=""/>
                             <h3>Lorem ipsum</h3>
                         </div>
-                        <a href=""><i className="fa-regular fa-bookmark save"></i></a>
+                        <Link to=""><i className="fa-regular fa-bookmark save"></i></Link>
                     </div>
                     <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
                         <div>
