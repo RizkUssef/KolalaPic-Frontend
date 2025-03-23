@@ -30,6 +30,14 @@
 .success-color{
     color: #497D74;
 }
+.success-container{
+    background-color: #688990;
+    color: #B3C8CF;
+}
+.error-container{
+    background-color: #7D0A0A;
+    color: #c94d4d;
+}
 .blur-color{
     color: rgba(0,0,0,0.4);
 }
@@ -43,6 +51,10 @@
     font-family: "Itim","serif";
 }
 .btn-submit:hover{
+    background-color: #688990;
+    color: #F1F0E8;
+}
+.btn-submit:focus{
     background-color: #688990;
     color: #F1F0E8;
 }

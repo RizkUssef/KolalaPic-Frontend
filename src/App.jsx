@@ -15,6 +15,8 @@ import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import Onephoto from "./components/Onephoto/Onephoto";
 import Otp from "./components/Otp/Otp";
 import { QueryClient, QueryClientProvider } from "react-query";
+import SuccessMsg from "./context/SuccessMsg";
+import ErrorMsg from "./context/ErrorMsg";
 
 const queryClientObj = new QueryClient();
 
@@ -43,9 +45,13 @@ export default function App() {
   ]);
   return (
     <>
-        <QueryClientProvider client={queryClientObj}>
-          <RouterProvider router={router} />
-        </QueryClientProvider>
+      <QueryClientProvider client={queryClientObj}>
+        <ErrorMsg>
+          <SuccessMsg>
+            <RouterProvider router={router} />
+          </SuccessMsg>
+        </ErrorMsg>
+      </QueryClientProvider>
     </>
   );
 }

@@ -11,7 +11,7 @@ export default function Profile() {
       <section id="profile" className="profile block py-10  pt-[100px] w-[90%] mx-auto secondary-font">
         <div className="flex justify-between items-center header-color ">
             <h1 className="base-font text-[50px]">Profile</h1>
-            <Link to="" id="search_btn" type="submit" className="text-lg lg:p-4 lg:text-xl slider_btn">
+            <Link to="/edit profile" id="search_btn" type="submit" className="text-lg lg:p-4 lg:text-xl slider_btn">
                 <i className="fa-regular fa-pen-to-square"></i></Link>
         </div>
         <div className="flex justify-start items-center gap-7 mt-10">

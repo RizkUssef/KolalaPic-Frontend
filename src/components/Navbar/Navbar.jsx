@@ -30,54 +30,65 @@ export default function Navbar() {
           <Link to="/">
             <img src={logo} className="logo-font header-color text-4xl"></img>
           </Link>
-          <div className="flex justify-between items-center header-color secondary-font text-xl gap-7 ">
-            <NavLink
-              id="animals"
-              className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
-              to="/animals"
-            >
-              Animals
-            </NavLink>
-            <NavLink
-              id="calm"
-              className="nav-links px-5 py-2 rounded-xl transition-all duration-500 "
-              to="/calm"
-            >
-              Calm
-            </NavLink>
-            <NavLink
-              id="couples"
-              className="nav-links px-5 py-2 rounded-xl transition-all duration-500 "
-              to="/couples"
-            >
-              Couples
-            </NavLink>
-            <NavLink
-              id="dark"
-              className="nav-links px-5 py-2 rounded-xl transition-all duration-500 "
-              to="/dark"
-            >
-              Dark
-            </NavLink>
-            <NavLink
-              id="football"
-              className="nav-links px-5 py-2 rounded-xl transition-all duration-500 "
-              to="/football"
-            >
-              Football
-            </NavLink>
-            <NavLink
-              className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
-              to="/login"
-            >
-              Login
-            </NavLink>
-            <NavLink
-              className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
-              to="/register"
-            >
-              Register
-            </NavLink>
+          <div className="w-[72%] flex justify-between items-center header-color secondary-font text-xl">
+            <div className="flex justify-between items-center header-color secondary-font text-xl gap-7 ">
+              <NavLink
+                id="animals"
+                className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
+                to="/animals"
+              >
+                Animals
+              </NavLink>
+              <NavLink
+                id="calm"
+                className="nav-links px-5 py-2 rounded-xl transition-all duration-500 "
+                to="/calm"
+              >
+                Calm
+              </NavLink>
+              <NavLink
+                id="couples"
+                className="nav-links px-5 py-2 rounded-xl transition-all duration-500 "
+                to="/couples"
+              >
+                Couples
+              </NavLink>
+              <NavLink
+                id="dark"
+                className="nav-links px-5 py-2 rounded-xl transition-all duration-500 "
+                to="/dark"
+              >
+                Dark
+              </NavLink>
+              <NavLink
+                id="football"
+                className="nav-links px-5 py-2 rounded-xl transition-all duration-500 "
+                to="/football"
+              >
+                Football
+              </NavLink>
+            </div>
+            <div className="flex justify-between items-center header-color secondary-font text-xl gap-2 ">
+              <NavLink
+                className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
+                to="/login"
+              >
+                Login
+              </NavLink>
+              <NavLink
+                className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
+                to="/register"
+              >
+                Register
+              </NavLink>
+                <button className="nav-links px-5 py-2 rounded-xl transition-all duration-500 cursor-pointer">Logout</button>
+              <NavLink
+                className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
+                to="/profile"
+              >
+                <i className="fa-solid fa-user"></i>
+              </NavLink>
+            </div>
           </div>
         </div>
       </nav>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CategorySlider from '../CategorySlider/CategorySlider'
 import ImagesContainer from '../ImagesContainer/ImagesContainer'
 import Footer from '../Footer/Footer'
@@ -6,9 +6,12 @@ import useCategoriesData from '../../Hooks/useCategoriesData'
 import { useQuery } from 'react-query'
 import axios from 'axios'
 import { InfinitySpin } from 'react-loader-spinner'
+import { SuccessMsgContext } from '../../context/SuccessMsg'
+import Alert from '../Alert/Alert'
 // import { isError } from './../../../node_modules/react-query/es/core/utils';
 
 export default function Home() {
+  // const {successMsg} = useContext(SuccessMsgContext)
   function getAll() {
     return axios.get(
       `http://localhost/KolalaPic/public/apiShowAll/showAll`
@@ -44,6 +47,7 @@ export default function Home() {
     }
   return (
     <>
+    <Alert/>
     <CategorySlider/>
     <ImagesContainer catName="More Like" data={data.data} />
     <Footer/>
