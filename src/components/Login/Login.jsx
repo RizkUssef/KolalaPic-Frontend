@@ -8,18 +8,17 @@ import * as yup from "yup";
 import { InfinitySpin } from "react-loader-spinner";
 import ErrorMsg, { ErrorMsgContext } from "../../context/ErrorMsg";
 import { SuccessMsgContext } from "../../context/SuccessMsg";
+import { AuthContext } from "../../context/Auth";
 
 export default function Login() {
-  // const { Alert } = useOutletContext();
-  //   const {loginCsrf,setLoginCsrf} = useState(null)
   const nav = useNavigate();
-    const {successMsg,setSuccessMsg} = useContext(SuccessMsgContext);  
+  const { successMsg, setSuccessMsg } = useContext(SuccessMsgContext);
   const { errorMsg, setErrorMsg } = useContext(ErrorMsgContext);
+  const { setAuth } = useContext(AuthContext);
   const [isCliked, setIsCliked] = useState(false);
   const csrf_login = useCsrf(
     "http://localhost/KolalaPic/public/apiLogin/loginCsrf"
   );
-  //   console.log(csrf_login);
   const loginData = {
     email: "",
     password: "",
@@ -34,11 +33,10 @@ export default function Login() {
       .then((res) => {
         console.log(res);
         setIsCliked(false);
-        setSuccessMsg("Welcome Back")
+        setSuccessMsg("Welcome Back");
         localStorage.setItem("user_token", res.data.user_token);
-        // setTimeout(()=> {
-            nav("/")
-        // },500)
+        setAuth(res.data.user_token);
+        nav("/");
       })
       .catch((res) => {
         setErrorMsg(res.response.data.error);

@@ -1,9 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useEffect } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
+import { AuthContext } from "../../context/Auth";
+import axios from "axios";
+import { SuccessMsgContext } from "../../context/SuccessMsg";
+import { ErrorMsgContext } from "../../context/ErrorMsg";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const { auth, setAuth } = useContext(AuthContext);
+  const {successMsg,setSuccessMsg} = useContext(SuccessMsgContext);
+  const {errorMsg, setErrorMsg} = useContext(ErrorMsgContext);
+
   const handleScroll = () => {
     const scrolledHeight = window.scrollY;
     const viewportHeight = window.innerHeight;
@@ -14,6 +23,27 @@ export default function Navbar() {
     }
   };
   window.addEventListener("scroll", handleScroll);
+  const nav = useNavigate();
+
+  const logout = () => {
+    if (auth) {
+      axios
+        .get(`http://localhost/KolalaPic/public/apiLogout/logout?tkn=${auth}`,{withCredentials:true})
+        .then((res) => {
+          localStorage.removeItem("user_token");
+          setAuth("");
+          setSuccessMsg(res.data.success);
+          nav("/login")
+        })
+        .catch((res) => {
+          setErrorMsg(res.response.data.error)
+        });
+        
+    } else {
+      setErrorMsg("already logged out");
+    }
+    
+  }
 
   return (
     <>
@@ -69,25 +99,43 @@ export default function Navbar() {
               </NavLink>
             </div>
             <div className="flex justify-between items-center header-color secondary-font text-xl gap-2 ">
-              <NavLink
-                className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
-                to="/login"
-              >
-                Login
-              </NavLink>
-              <NavLink
-                className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
-                to="/register"
-              >
-                Register
-              </NavLink>
-                <button className="nav-links px-5 py-2 rounded-xl transition-all duration-500 cursor-pointer">Logout</button>
-              <NavLink
-                className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
-                to="/profile"
-              >
-                <i className="fa-solid fa-user"></i>
-              </NavLink>
+              {auth ? (
+                <>
+                  <button
+                    className="nav-links px-5 py-2 rounded-xl transition-all duration-500 cursor-pointer"
+                    onClick={logout}
+                  >
+                    Logout
+                  </button>
+                  <NavLink
+                    className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
+                    to="/profile"
+                  >
+                    <i className="fa-solid fa-user"></i>
+                  </NavLink>
+                  <NavLink
+                    className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
+                    to="/upload"
+                  >
+                    <i className="fa-solid fa-upload"></i>
+                  </NavLink>
+                </>
+              ) : (
+                <>
+                  <NavLink
+                    className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
+                    to="/login"
+                  >
+                    Login
+                  </NavLink>
+                  <NavLink
+                    className="nav-links px-5 py-2 rounded-xl transition-all duration-500"
+                    to="/register"
+                  >
+                    Register
+                  </NavLink>
+                </>
+              )}
             </div>
           </div>
         </div>

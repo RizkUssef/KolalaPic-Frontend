@@ -1,5 +1,5 @@
 import React from "react";
-import img6 from "../../assets/Kolala images/Calm/1.jpeg";
+// import img6 from "../../assets/Kolala images/Calm/1.jpeg";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import axios from "axios";

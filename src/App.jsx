@@ -17,6 +17,9 @@ import Otp from "./components/Otp/Otp";
 import { QueryClient, QueryClientProvider } from "react-query";
 import SuccessMsg from "./context/SuccessMsg";
 import ErrorMsg from "./context/ErrorMsg";
+import UploadImage from "./components/UploadImage/UploadImage";
+import Auth from "./context/Auth";
+import Guard from "./components/Guard/Guard";
 
 const queryClientObj = new QueryClient();
 
@@ -27,18 +30,85 @@ export default function App() {
       element: <Layout />,
       children: [
         { path: "", element: <Home /> },
-        { path: "/animals", element: <Animal /> },
-        { path: "/calm", element: <Calm /> },
-        { path: "/couples", element: <Couple /> },
-        { path: "/dark", element: <Dark /> },
-        { path: "/football", element: <Football /> },
-        { path: "/login", element: <Login /> },
+        {
+          path: "/animals",
+          element: (
+            <Guard>
+              <Animal />
+            </Guard>
+          ),
+        },
+        {
+          path: "/calm",
+          element: (
+            <Guard>
+              <Calm />
+            </Guard>
+          ),
+        },
+        {
+          path: "/couples",
+          element: (
+            <Guard>
+              <Couple />
+            </Guard>
+          ),
+        },
+        {
+          path: "/dark",
+          element: (
+            <Guard>
+              <Dark />
+            </Guard>
+          ),
+        },
+        {
+          path: "/football",
+          element: (
+            <Guard>
+              <Football />
+            </Guard>
+          ),
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
         { path: "/register", element: <Register /> },
-        { path: "/edit profile", element: <EditProfile /> },
+        {
+          path: "/edit profile",
+          element: (
+            <Guard>
+              <EditProfile />
+            </Guard>
+          ),
+        },
         { path: "/forget password", element: <ForgotPassword /> },
-        { path: "/one photo/:id", element: <Onephoto /> },
+        {
+          path: "/one photo/:id",
+          element: (
+            <Guard>
+              <Onephoto />
+            </Guard>
+          ),
+        },
         { path: "/otp", element: <Otp /> },
-        { path: "/profile", element: <Profile /> },
+        {
+          path: "/profile",
+          element: (
+            <Guard>
+              <Profile />
+            </Guard>
+          ),
+        },
+        {
+          path: "/upload",
+          element: (
+            <Guard>
+              <UploadImage />
+            </Guard>
+          ),
+        },
       ],
     },
     { path: "*", element: <h1>ERROR</h1> },
@@ -46,11 +116,13 @@ export default function App() {
   return (
     <>
       <QueryClientProvider client={queryClientObj}>
-        <ErrorMsg>
-          <SuccessMsg>
-            <RouterProvider router={router} />
-          </SuccessMsg>
-        </ErrorMsg>
+        <Auth>
+          <ErrorMsg>
+            <SuccessMsg>
+              <RouterProvider router={router} />
+            </SuccessMsg>
+          </ErrorMsg>
+        </Auth>
       </QueryClientProvider>
     </>
   );
