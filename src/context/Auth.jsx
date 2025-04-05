@@ -10,11 +10,6 @@ export default function Auth({ children }) {
       setAuth(tkn);
     }
   }, []);
-  // if (tkn) {
-
-  // } else {
-  //   return <Navigate to="/login" />;
-  // }
   return (
     <AuthContext.Provider value={{ auth, setAuth }}>
       {children}

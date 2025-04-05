@@ -86,11 +86,7 @@ export default function App() {
         { path: "/forget password", element: <ForgotPassword /> },
         {
           path: "/one photo/:id",
-          element: (
-            <Guard>
-              <Onephoto />
-            </Guard>
-          ),
+          element: <Onephoto />,
         },
         { path: "/otp", element: <Otp /> },
         {

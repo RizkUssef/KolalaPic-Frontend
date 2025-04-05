@@ -6,7 +6,6 @@ export default function Guard({ children }) {
   const { auth } = useContext(AuthContext);
   if (auth == null || localStorage.getItem("user_token") == null) {
     return <Navigate to={"/login"} />;
-  } else {
-    return <>{children}</>;
   }
+  return <>{children}</>;
 }

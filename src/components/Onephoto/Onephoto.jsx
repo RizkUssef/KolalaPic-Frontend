@@ -13,10 +13,12 @@ export default function Onephoto() {
       `http://localhost/KolalaPic/public/apiShowOne/showOne?id=${id}`
     );
   }
-  const { data, isError, isLoading , error } = useQuery({
+  const { data, isError, isLoading, error } = useQuery({
     queryKey: ["photo", id],
     queryFn: getOne,
   });
+  // console.log(data);
+  
   if (isLoading) {
     return (
       <>
@@ -33,12 +35,12 @@ export default function Onephoto() {
   }
   if (isError) {
     return (
-        <div className="h-screen flex justify-center items-center">
-          <p className="rounded-3xl px-40 py-5 text-red-100 bg-red-800 capitalize text-2xl secondary-font ">
-            {error.response.data.error}
-          </p>
-        </div>
-      );
+      <div className="h-screen flex justify-center items-center">
+        <p className="rounded-3xl px-40 py-5 text-red-100 bg-red-800 capitalize text-2xl secondary-font ">
+          {error.response.data.error}
+        </p>
+      </div>
+    );
   }
   return (
     <>
@@ -62,17 +64,20 @@ export default function Onephoto() {
                 <i className="fa-regular fa-heart p-5 base-bg border-4 border-white rounded-full"></i>
               </Link>
             </div>
-            <div className="download absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <Link to="">
-                <i className="fa-solid fa-download p-5 base-bg border-4 border-white rounded-full"></i>
-              </Link>
+            <div className="download absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer" >
+                <a  download={data.data.file} href={`http://localhost/KolalaPic/public/apiShowOne/downloadPhoto?id=${id}`} >
+                  <i className="fa-solid fa-download p-5 base-bg border-4 border-white rounded-full"></i>
+                </a>
             </div>
           </div>
           <div className="secondary-font my-10">
-            <h1 id="one_title" className="text-3xl header-color mb-5">
+            <h1
+              id="one_title"
+              className="text-3xl header-color mb-5 capitalize"
+            >
               {data.data.title}
             </h1>
-            <p id="one_auther" className="light-text-color mb-5">
+            <p id="one_auther" className="light-text-color mb-5 capitalize">
               {data.data.auther}
             </p>
             <p id="one_desc" className="light-text-color">
@@ -95,7 +100,7 @@ export default function Onephoto() {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </>
   );
 }
