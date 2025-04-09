@@ -92,9 +92,9 @@ export default function App() {
         {
           path: "/profile",
           element: (
-            <Guard>
+            // <Guard>
               <Profile />
-            </Guard>
+            // </Guard>
           ),
         },
         {

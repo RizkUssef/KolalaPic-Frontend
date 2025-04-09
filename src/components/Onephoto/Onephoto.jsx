@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 // import img6 from "../../assets/Kolala images/Calm/1.jpeg";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import axios from "axios";
 import { InfinitySpin } from "react-loader-spinner";
 import Footer from "../Footer/Footer";
+import { AuthContext } from "../../context/Auth";
+import { SuccessMsgContext } from "../../context/SuccessMsg";
+import { ErrorMsgContext } from "../../context/ErrorMsg";
+import Alert from "../Alert/Alert";
 
 export default function Onephoto() {
   const { id } = useParams();
+  const { auth } = useContext(AuthContext);
+  const { setSuccessMsg } = useContext(SuccessMsgContext);
+  const { setErrorMsg } = useContext(ErrorMsgContext);
+  const [clk, setClk] = useState(false);
+
   function getOne() {
     return axios(
       `http://localhost/KolalaPic/public/apiShowOne/showOne?id=${id}`
@@ -17,8 +26,6 @@ export default function Onephoto() {
     queryKey: ["photo", id],
     queryFn: getOne,
   });
-  // console.log(data);
-  
   if (isLoading) {
     return (
       <>
@@ -42,11 +49,38 @@ export default function Onephoto() {
       </div>
     );
   }
+
+  function loved() {
+    setClk(true);
+    axios(
+      `http://localhost/KolalaPic/public/apiLove/love?id=${id}&user_token=${auth}`
+    )
+      .then((res) => {
+        setSuccessMsg(res.data.success);
+      })
+      .catch((res) => {
+        setErrorMsg(res.response.data.error);
+      });
+  }
+  function saved() {
+    // setClk(true);
+    axios(
+      `http://localhost/KolalaPic/public/apiSave/save?id=${id}&user_token=${auth}`
+    )
+      .then((res) => {
+        setSuccessMsg(res.data.success);
+      })
+      .catch((res) => {
+        setErrorMsg(res.response.data.error);
+      });
+  }
+
   return (
     <>
       <section className="w-[90%] pt-[100px] mx-auto flex justify-center items-center">
         <div className="w-full flex flex-col justify-center items-center ">
           <div className="relative h-[70vh] header-color text-xl">
+            <Alert />
             <img
               id="one_img"
               className="w-fit rounded-2xl border-4 h-[70vh] border-white"
@@ -54,20 +88,29 @@ export default function Onephoto() {
               alt="img"
             />
             <div className="actions flex flex-col gap-5 absolute top-1/2 left-full -translate-x-1/2 -translate-y-1/2">
-              <Link to="">
+              <button onClick={saved}>
                 <i className="fa-regular fa-bookmark p-5 base-bg border-4 border-white rounded-full"></i>
-              </Link>
+              </button>
               <Link to="">
                 <i className="fa-solid fa-share p-5 base-bg border-4 border-white rounded-full"></i>
               </Link>
-              <Link to="">
-                <i className="fa-regular fa-heart p-5 base-bg border-4 border-white rounded-full"></i>
-              </Link>
+              <button onClick={loved}>
+                <i
+                  className={
+                    clk
+                      ? "fa-solid fa-heart p-5 base-bg border-4 border-white rounded-full"
+                      : "fa-regular fa-heart p-5 base-bg border-4 border-white rounded-full"
+                  }
+                ></i>
+              </button>
             </div>
-            <div className="download absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer" >
-                <a  download={data.data.file} href={`http://localhost/KolalaPic/public/apiShowOne/downloadPhoto?id=${id}`} >
-                  <i className="fa-solid fa-download p-5 base-bg border-4 border-white rounded-full"></i>
-                </a>
+            <div className="download absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer">
+              <a
+                download={data.data.file}
+                href={`http://localhost/KolalaPic/public/apiShowOne/downloadPhoto?id=${id}`}
+              >
+                <i className="fa-solid fa-download p-5 base-bg border-4 border-white rounded-full"></i>
+              </a>
             </div>
           </div>
           <div className="secondary-font my-10">

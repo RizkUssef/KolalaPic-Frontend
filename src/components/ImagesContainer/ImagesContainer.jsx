@@ -34,7 +34,7 @@ export default function ImagesContainer({ catName, data }) {
           id="all"
           className="columns-2 text-[#B3C8CF] mt-5 lg:columns-3 xl:columns-4 text-bg font-secondary "
         >
-          {data.map((data) => (
+          {data?.map((data) => (
             <Link key={data._id.$oid} className="mb-5" to={`/one photo/${data._id.$oid}`}>
               <div
                 className="relative mb-5 image_container cursor-pointer img_to_go block"
