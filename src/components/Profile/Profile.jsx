@@ -14,6 +14,27 @@ export default function Profile() {
   const [msg,setMsg] = useState();
   const { setErrorMsg } = useContext(ErrorMsgContext);
 
+  // get the saved image 
+  function getSaved() {
+    return axios(
+      `http://localhost/KolalaPic/public/apiProfile/showAllSaved?user_token=${auth}`,
+      { withCredentials: true }
+    );
+  }
+  const {
+    data: savedData,
+    isError: savedIsError,
+    isLoading: savedIsLoading,
+    error: savedError,
+    isSuccess: savedIsSuccess,
+    refetch: getSavedProfile,
+  } = useQuery({
+    queryKey: "savedphotos",
+    queryFn: getSaved,
+    enabled: !!auth,
+  });
+
+  // get the loved photos
   function getLoved() {
     return axios(
       `http://localhost/KolalaPic/public/apiProfile/showAllLoved?user_token=${auth}`,
@@ -33,37 +54,19 @@ export default function Profile() {
     enabled: !!auth,
   });
 
-  function getSaved() {
-    return axios(
-      `http://localhost/KolalaPic/public/apiProfile/showAllSaved?user_token=${auth}`,
-      { withCredentials: true }
-    );
-  }
-  const {
-    data: savedData,
-    isError: savedIsError,
-    isLoading: savedIsLoading,
-    error: savedError,
-    isSuccess: savedIsSuccess,
-    refetch: getSavedProfile,
-  } = useQuery({
-    queryKey: "savedphotos",
-    queryFn: getSaved,
-    enabled: !!auth,
-  });
-  useEffect(() => {
-    if (savedIsSuccess) {
-      setMsg("Saved ");
-      setAllData(savedData.data);
-    }
-  }, [savedIsSuccess, savedData]);
-
   useEffect(() => {
     if (isSuccess) {
       setMsg("Loved ");
       setAllData(data.data);
     }
   }, [isSuccess, data]);
+
+  useEffect(() => {
+    if (savedIsSuccess) {
+      setMsg("Saved ");
+      setAllData(savedData.data);
+    }
+  }, [savedIsSuccess, savedData]);
 
   if (isLoading || savedIsLoading) {
     return (

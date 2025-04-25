@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 // import img6 from "../../assets/Kolala images/Calm/1.jpeg";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
@@ -9,13 +9,16 @@ import { AuthContext } from "../../context/Auth";
 import { SuccessMsgContext } from "../../context/SuccessMsg";
 import { ErrorMsgContext } from "../../context/ErrorMsg";
 import Alert from "../Alert/Alert";
+import useInteractions from "../../Hooks/useInteractions";
+// import { UserInteractionsContext } from "../../context/UserInteractions";
 
 export default function Onephoto() {
   const { id } = useParams();
-  const { auth } = useContext(AuthContext);
-  const { setSuccessMsg } = useContext(SuccessMsgContext);
-  const { setErrorMsg } = useContext(ErrorMsgContext);
-  const [clk, setClk] = useState(false);
+  // const { auth } = useContext(AuthContext);
+  // const { setSuccessMsg } = useContext(SuccessMsgContext);
+  // const { setErrorMsg } = useContext(ErrorMsgContext);
+  const [clk] = useState(false);
+  const { setInteractions } = useInteractions();
 
   function getOne() {
     return axios(
@@ -50,37 +53,15 @@ export default function Onephoto() {
     );
   }
 
-  function loved() {
-    setClk(true);
-    axios(
-      `http://localhost/KolalaPic/public/apiLove/love?id=${id}&user_token=${auth}`
-    )
-      .then((res) => {
-        setSuccessMsg(res.data.success);
-      })
-      .catch((res) => {
-        setErrorMsg(res.response.data.error);
-      });
-  }
-  function saved() {
-    // setClk(true);
-    axios(
-      `http://localhost/KolalaPic/public/apiSave/save?id=${id}&user_token=${auth}`
-    )
-      .then((res) => {
-        setSuccessMsg(res.data.success);
-      })
-      .catch((res) => {
-        setErrorMsg(res.response.data.error);
-      });
-  }
+  const handleClick = async (count, func, id) => {
+    await setInteractions(count, func, id);
+  };
 
   return (
     <>
       <section className="w-[90%] pt-[100px] mx-auto flex justify-center items-center">
         <div className="w-full flex flex-col justify-center items-center ">
           <div className="relative h-[70vh] header-color text-xl">
-            <Alert />
             <img
               id="one_img"
               className="w-fit rounded-2xl border-4 h-[70vh] border-white"
@@ -88,13 +69,21 @@ export default function Onephoto() {
               alt="img"
             />
             <div className="actions flex flex-col gap-5 absolute top-1/2 left-full -translate-x-1/2 -translate-y-1/2">
-              <button onClick={saved}>
+              <button
+                onClick={() => {
+                  handleClick("apiSave", "save", id);
+                }}
+              >
                 <i className="fa-regular fa-bookmark p-5 base-bg border-4 border-white rounded-full"></i>
               </button>
               <Link to="">
                 <i className="fa-solid fa-share p-5 base-bg border-4 border-white rounded-full"></i>
               </Link>
-              <button onClick={loved}>
+              <button
+                onClick={() => {
+                  handleClick("apiLove", "love", id);
+                }}
+              >
                 <i
                   className={
                     clk

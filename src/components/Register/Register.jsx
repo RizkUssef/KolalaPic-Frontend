@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { FidgetSpinner, InfinitySpin } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
@@ -10,8 +10,8 @@ import { ErrorMsgContext } from "../../context/ErrorMsg";
 import useCsrf from "../../Hooks/useCsrf";
 
 export default function Register() {
-  const { successMsg, setSuccessMsg } = useContext(SuccessMsgContext);
-  const { errorMsg, setErrorMsg } = useContext(ErrorMsgContext);
+  const { setSuccessMsg } = useContext(SuccessMsgContext);
+  // const { errorMsg, setErrorMsg } = useContext(ErrorMsgContext);
   const nav = useNavigate();
   const [isCliked, setIsCliked] = useState(false);
   //   7. create state to store errors

@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React, {  } from 'react'
 import CategorySlider from '../CategorySlider/CategorySlider'
 import ImagesContainer from '../ImagesContainer/ImagesContainer'
 import Footer from '../Footer/Footer'
-import useCategoriesData from '../../Hooks/useCategoriesData'
+// import useCategoriesData from '../../Hooks/useCategoriesData'
 import { useQuery } from 'react-query'
 import axios from 'axios'
 import { InfinitySpin } from 'react-loader-spinner'
@@ -47,7 +47,6 @@ export default function Home() {
     }
   return (
     <>
-    <Alert/>
     <CategorySlider/>
     <ImagesContainer catName="More Like" data={data.data} />
     <Footer/>

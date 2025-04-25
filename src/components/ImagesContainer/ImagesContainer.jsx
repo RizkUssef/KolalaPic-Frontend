@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useInteractions from "../../Hooks/useInteractions";
 
 export default function ImagesContainer({ catName, data }) {
+  const { setInteractions } = useInteractions();
+
+  const handleClick = async (count, func, id) => {
+    await setInteractions(count, func, id);
+  };
   return (
     <>
       <section
@@ -35,18 +41,18 @@ export default function ImagesContainer({ catName, data }) {
           className="columns-2 text-[#B3C8CF] mt-5 lg:columns-3 xl:columns-4 text-bg font-secondary "
         >
           {data?.map((data) => (
-            <Link key={data._id.$oid} className="mb-5" to={`/one photo/${data._id.$oid}`}>
-              <div
-                className="relative mb-5 image_container cursor-pointer img_to_go block"
-              >
+            <Link
+              key={data._id.$oid}
+              className="mb-5"
+              to={`/one photo/${data._id.$oid}`}
+            >
+              <div className="relative mb-5 image_container cursor-pointer img_to_go block">
                 <img
                   src={`http://localhost/KolalaPic/public/uploads/${data.file}`}
                   className="rounded-xl w-full"
                   alt="img"
                 />
-                <div
-                  className="absolute inset-0 bg-[rgba(0,0,0,0.4)]  flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg"
-                >
+                <div className="absolute inset-0 bg-[rgba(0,0,0,0.4)]  flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg">
                   <div className="flex justify-between items-center absolute top-3 right-3 w-[90%]">
                     <div className="w-[80%] flex justify-start gap-3 items-center">
                       <img
@@ -56,7 +62,14 @@ export default function ImagesContainer({ catName, data }) {
                       />
                       <h3 className="capitalize">{data.auther}</h3>
                     </div>
-                      <i className="fa-regular fa-bookmark save"></i>
+                    <i
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        e.preventDefault()
+                        handleClick("apiSave", "save", data._id.$oid);
+                      }}
+                      className="fa-regular fa-bookmark save"
+                    ></i>
                   </div>
                   <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
                     <div>
@@ -64,7 +77,14 @@ export default function ImagesContainer({ catName, data }) {
                     </div>
                     <div>
                       <i className="fa-solid fa-share share mr-3"></i>
-                      <i className="fa-regular fa-heart heart"></i>
+                      <i
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          e.preventDefault()
+                          handleClick("apiLove", "love", data._id.$oid);
+                        }}
+                        className="fa-regular fa-heart heart"
+                      ></i>
                     </div>
                   </div>
                 </div>

@@ -100,9 +100,9 @@ export default function App() {
         {
           path: "/upload",
           element: (
-            <Guard>
+            // <Guard>
               <UploadImage />
-            </Guard>
+            // </Guard>
           ),
         },
       ],
