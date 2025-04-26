@@ -11,85 +11,63 @@ import { SuccessMsgContext } from "../../context/SuccessMsg";
 export default function Profile() {
   const { auth } = useContext(AuthContext);
   const [allData, setAllData] = useState();
-  const [msg,setMsg] = useState();
+  const [imgs, setImgs] = useState();
+  const [loveBg, setLoveBg] = useState();
+  const [saveBg, setSaveBg] = useState();
+  const [uploadBtn, setUploadBtn] = useState(false);
+  const [loveBtn, setLoveBtn] = useState(true);
+  const [saveBtn, setSaveBtn] = useState(false);
+  const [msg, setMsg] = useState();
   const { setErrorMsg } = useContext(ErrorMsgContext);
 
-  // get the saved image 
-  function getSaved() {
-    return axios(
-      `http://localhost/KolalaPic/public/apiProfile/showAllSaved?user_token=${auth}`,
-      { withCredentials: true }
-    );
+  async function getAllData(func, msg) {
+    await axios(`http://localhost/KolalaPic/public/apiProfile/${func}`, {
+      withCredentials: true,
+      headers: {
+        tkn: auth,
+      },
+    })
+      .then((res) => {
+        console.log(res);
+        setMsg(msg);
+        setAllData(res.data);
+      })
+      .catch((res) => {
+        setErrorMsg(res.response.data.error);
+      });
   }
-  const {
-    data: savedData,
-    isError: savedIsError,
-    isLoading: savedIsLoading,
-    error: savedError,
-    isSuccess: savedIsSuccess,
-    refetch: getSavedProfile,
-  } = useQuery({
-    queryKey: "savedphotos",
-    queryFn: getSaved,
-    enabled: !!auth,
-  });
 
-  // get the loved photos
-  function getLoved() {
-    return axios(
-      `http://localhost/KolalaPic/public/apiProfile/showAllLoved?user_token=${auth}`,
-      { withCredentials: true }
-    );
+  async function getAllBg() {
+    await axios(
+      `http://localhost/KolalaPic/public/apiProfile/getInteractionsFiles`,
+      {
+        withCredentials: true,
+        headers: {
+          tkn: auth,
+        },
+      }
+    )
+      .then((res) => {
+        setImgs(res.data);
+      })
+      .catch((res) => {
+        console.log(res);
+      });
   }
-  const {
-    data,
-    isError,
-    isLoading,
-    error,
-    isSuccess,
-    refetch: getLovedProfile,
-  } = useQuery({
-    queryKey: "photos",
-    queryFn: getLoved,
-    enabled: !!auth,
-  });
 
   useEffect(() => {
-    if (isSuccess) {
-      setMsg("Loved ");
-      setAllData(data.data);
+    if (auth) {
+      getAllData("showAllLoved", "Loved ");
+      getAllBg();
     }
-  }, [isSuccess, data]);
+  }, [auth]);
 
   useEffect(() => {
-    if (savedIsSuccess) {
-      setMsg("Saved ");
-      setAllData(savedData.data);
+    if (imgs) {
+      setLoveBg(imgs[0].file);
+      setSaveBg(imgs[1].file);
     }
-  }, [savedIsSuccess, savedData]);
-
-  if (isLoading || savedIsLoading) {
-    return (
-      <div className="h-screen flex justify-center items-center">
-        <InfinitySpin
-          visible={true}
-          width="200"
-          color="#688990"
-          ariaLabel="infinity-spin-loading"
-        />
-      </div>
-    );
-  }
-  if (isError || savedIsError) {
-    return (
-      <div className="h-screen flex justify-center items-center">
-        <p className="rounded-3xl px-40 py-5 text-red-100 bg-red-800 capitalize text-2xl secondary-font ">
-          {error && setErrorMsg(error)}
-          {savedError && setErrorMsg(savedError)}
-        </p>
-      </div>
-    );
-  }
+  }, [imgs]);
 
   return (
     <>
@@ -122,13 +100,18 @@ export default function Profile() {
         <div className="flex justify-between items-center w-[70%] mx-auto mt-10 header-color text-xl">
           <div className="relative">
             <img
-              src={`http://localhost/KolalaPic/public/uploads/${data?.data[0]?.file}`}
+              src={`http://localhost/KolalaPic/public/uploads/${loveBg}`}
               className="w-72 h-52 rounded-2xl border-4 border-white object-cover"
               alt=""
             />
             <i
-              onClick={getLovedProfile}
-              className="fa-solid profile_ico fa-heart absolute top-full left-full -translate-x-1/2 -translate-y-1/2 p-5 bg-white cursor-pointer border-4 border-white  rounded-full"
+              onClick={() => {
+                getAllData("showAllLoved", "Loved ");
+                setLoveBtn(true);
+                setUploadBtn(false);
+                setSaveBtn(false);
+              }}
+              className={`${loveBtn?"bg-white":""} fa-solid profile_ico fa-heart absolute top-full left-full -translate-x-1/2 -translate-y-1/2 p-5  cursor-pointer border-4 border-white  rounded-full`}
             ></i>
           </div>
           <div className="relative">
@@ -137,24 +120,33 @@ export default function Profile() {
               className="w-72 h-52 rounded-2xl border-4 border-white object-cover"
               alt=""
             />
-            <i className="fa-solid profile_ico fa-upload absolute top-full left-full -translate-x-1/2 -translate-y-1/2 p-5 bg-bg cursor-pointer border-4 border-white  rounded-full"></i>
+            <i
+              onClick={() => {
+                setLoveBtn(false);
+                setUploadBtn(true);
+                setSaveBtn(false);
+              }}
+              className={`${uploadBtn?"bg-white":""} fa-solid profile_ico fa-upload absolute top-full left-full -translate-x-1/2 -translate-y-1/2 p-5 bg-bg cursor-pointer border-4 border-white  rounded-full`}
+            ></i>
           </div>
           <div className="relative">
             <img
-                src={`http://localhost/KolalaPic/public/uploads/${
-                  savedData?.data[0]?.file
-                }`}
-                
+              src={`http://localhost/KolalaPic/public/uploads/${saveBg}`}
               className="w-72 h-52 rounded-2xl border-4 border-white object-cover"
               alt=""
             />
             <i
-              onClick={getSavedProfile}
-              className="fa-solid profile_ico fa-bookmark absolute top-full left-full -translate-x-1/2 -translate-y-1/2 p-5 bg-bg cursor-pointer  border-4 border-white  rounded-full"
+              onClick={() => {
+                getAllData("showAllSaved", "Saved ");
+                setLoveBtn(false);
+                setUploadBtn(false);
+                setSaveBtn(true);
+              }}
+              className={`${saveBtn?"bg-white":""} fa-solid profile_ico fa-bookmark absolute top-full left-full -translate-x-1/2 -translate-y-1/2 p-5 bg-bg cursor-pointer  border-4 border-white  rounded-full`}
             ></i>
           </div>
         </div>
-        <ImagesContainer catName={`${msg }Photos`} data={allData} />
+        <ImagesContainer catName={`${msg}Photos`} data={allData} />
       </section>
     </>
   );
