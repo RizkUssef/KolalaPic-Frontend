@@ -68,7 +68,7 @@ export default function ImagesContainer({ catName, data }) {
                         e.preventDefault()
                         handleClick("apiSave", "save", data._id.$oid);
                       }}
-                      className="fa-regular fa-bookmark save"
+                      className="fa-regular fa-bookmark save cursor-pointer"
                     ></i>
                   </div>
                   <div className="flex justify-between items-center absolute w-[90%] bottom-3 right-3">
@@ -83,7 +83,7 @@ export default function ImagesContainer({ catName, data }) {
                           e.preventDefault()
                           handleClick("apiLove", "love", data._id.$oid);
                         }}
-                        className="fa-regular fa-heart heart"
+                        className="fa-regular fa-heart heart cursor-pointer"
                       ></i>
                     </div>
                   </div>

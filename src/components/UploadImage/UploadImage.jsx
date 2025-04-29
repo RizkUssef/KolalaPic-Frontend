@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import useCsrf from "../../Hooks/useCsrf";
 import axios from "axios";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { InfinitySpin } from "react-loader-spinner";
+import { AuthContext } from "../../context/Auth";
+import { SuccessMsgContext } from "../../context/SuccessMsg";
+import { ErrorMsgContext } from "../../context/ErrorMsg";
+import { useNavigate } from "react-router-dom";
 
 export default function UploadImage() {
   const [isCliked, setIsCliked] = useState(false);
-
+  const {auth} = useContext(AuthContext);
+  const {setSuccessMsg} =useContext(SuccessMsgContext);
+  const {setErrorMsg} =useContext(ErrorMsgContext);
+  const nav = useNavigate();
   const upload_csrf = useCsrf(
     "http://localhost/KolalaPic/public/apiUploadImage/uploadCsrf"
   );
@@ -30,15 +37,16 @@ export default function UploadImage() {
         withCredentials: true,
         headers: {
           "Content-Type": "multipart/form-data", // Important for file uploads
+          tkn:auth
         },
-      })
+  })
       .then((res) => {
-        setIsCliked(true);
-        console.log(UploadForm.values);
-        console.log(res);
+        setIsCliked(false);
+        setSuccessMsg(res.data.success);
+        nav("/profile")
       })
       .catch((res) => {
-        console.log(res);
+        setErrorMsg(res.data.error)
       });
   }
 
@@ -63,11 +71,9 @@ export default function UploadImage() {
         .mixed()
         .required("you must upload file")
         .test("fileSize", "too large file", (value) => {
-          console.log(value);
           return value && value.size <= file_size;
         })
         .test("fileType", "unkown file format", (value) => {
-          console.log(value);
           return value && file_types.includes(value.type);
         }),
       description: yup.string().required("description is required"),
@@ -141,7 +147,7 @@ export default function UploadImage() {
               type="file"
               name="file"
               className="base-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-white file:text-headers file:text-secondary cursor-pointer file:cursor-pointer hover:file:bg-violet-100 bg-[#fff]"
-              // onChange={UploadForm.handleChange}
+              // to handle the upload the file
               onChange={(event) => {
                 UploadForm.setFieldValue("file", event.currentTarget.files[0]);
               }}
@@ -236,7 +242,13 @@ export default function UploadImage() {
               onBlur={UploadForm.handleBlur}
               value={UploadForm.values.category}
             >
-              {UploadForm.errors.category && UploadForm.touched.category ? (
+              <option defaultValue="animals">animals</option>
+              <option defaultValue="calm">calm</option>
+              <option defaultValue="couples">couples</option>
+              <option defaultValue="dark">dark</option>
+              <option defaultValue="football">football</option>
+            </select>
+            {UploadForm.errors.category && UploadForm.touched.category ? (
                 <div>
                   <p className="text-red-900 text-lg capitalize">
                     {UploadForm.errors.category}
@@ -245,12 +257,6 @@ export default function UploadImage() {
               ) : (
                 ""
               )}
-              <option defaultValue="animals">animals</option>
-              <option defaultValue="calm">calm</option>
-              <option defaultValue="couples">couples</option>
-              <option defaultValue="dark">dark</option>
-              <option defaultValue="football">football</option>
-            </select>
             <div className="self-end mt-3">
               <button
                 className="cursor-pointer transition-all duration-500 base-bg px-3 py-2 rounded-2xl btn-submit"

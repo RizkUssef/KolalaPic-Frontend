@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Alert from "../Alert/Alert";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useCsrf from "../../Hooks/useCsrf";
 import axios from "axios";
 import { useFormik } from "formik";
@@ -12,8 +12,8 @@ import { AuthContext } from "../../context/Auth";
 
 export default function Login() {
   const nav = useNavigate();
-  const { successMsg, setSuccessMsg } = useContext(SuccessMsgContext);
-  const { errorMsg, setErrorMsg } = useContext(ErrorMsgContext);
+  const { setSuccessMsg } = useContext(SuccessMsgContext);
+  const { setErrorMsg } = useContext(ErrorMsgContext);
   const { setAuth } = useContext(AuthContext);
   const [isCliked, setIsCliked] = useState(false);
   const csrf_login = useCsrf(

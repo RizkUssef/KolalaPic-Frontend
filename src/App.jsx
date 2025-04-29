@@ -20,6 +20,7 @@ import ErrorMsg from "./context/ErrorMsg";
 import UploadImage from "./components/UploadImage/UploadImage";
 import Auth from "./context/Auth";
 import Guard from "./components/Guard/Guard";
+import ChangePassword from "./components/ChangePassword/ChangePassword";
 
 const queryClientObj = new QueryClient();
 
@@ -92,17 +93,33 @@ export default function App() {
         {
           path: "/profile",
           element: (
-            // <Guard>
+            <Guard>
               <Profile />
-            // </Guard>
+            </Guard>
           ),
         },
         {
           path: "/upload",
           element: (
-            // <Guard>
+            <Guard>
               <UploadImage />
-            // </Guard>
+            </Guard>
+          ),
+        },
+        {
+          path: "/change password",
+          element: (
+            <Guard>
+              <ChangePassword/>
+            </Guard>
+          ),
+        },
+        {
+          path: "/forget password",
+          element: (
+            <Guard>
+              <ForgotPassword/>
+            </Guard>
           ),
         },
       ],

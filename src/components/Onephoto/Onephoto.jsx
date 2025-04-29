@@ -74,10 +74,10 @@ export default function Onephoto() {
                   handleClick("apiSave", "save", id);
                 }}
               >
-                <i className="fa-regular fa-bookmark p-5 base-bg border-4 border-white rounded-full"></i>
+                <i className="fa-regular fa-bookmark p-5 base-bg border-4 border-white rounded-full cursor-pointer"></i>
               </button>
               <Link to="">
-                <i className="fa-solid fa-share p-5 base-bg border-4 border-white rounded-full"></i>
+                <i className="fa-solid fa-share p-5 base-bg border-4 border-white rounded-full cursor-pointer"></i>
               </Link>
               <button
                 onClick={() => {
@@ -87,8 +87,8 @@ export default function Onephoto() {
                 <i
                   className={
                     clk
-                      ? "fa-solid fa-heart p-5 base-bg border-4 border-white rounded-full"
-                      : "fa-regular fa-heart p-5 base-bg border-4 border-white rounded-full"
+                      ? "fa-solid fa-heart p-5 base-bg border-4 border-white rounded-full cursor-pointer"
+                      : "fa-regular fa-heart p-5 base-bg border-4 border-white rounded-full cursor-pointer"
                   }
                 ></i>
               </button>
