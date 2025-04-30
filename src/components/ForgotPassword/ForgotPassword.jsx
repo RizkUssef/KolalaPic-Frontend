@@ -36,12 +36,10 @@ export default function ForgotPassword() {
         }
       )
       .then((res) => {
-        // console.log(res);
         setIsCliked(false)
         setSuccessMsg(res.data.success)
       })
       .catch((res) => {
-        // console.log(res);
         setErrorMsg(res.response.data.error)
       });
   }

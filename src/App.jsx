@@ -22,6 +22,7 @@ import Auth from "./context/Auth";
 import Guard from "./components/Guard/Guard";
 import ChangePassword from "./components/ChangePassword/ChangePassword";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
+import SearchResult from "./components/SearchResult/SearchResult";
 
 const queryClientObj = new QueryClient();
 
@@ -104,6 +105,14 @@ export default function App() {
           element: (
             <Guard>
               <Profile />
+            </Guard>
+          ),
+        },
+        {
+          path: "/search result",
+          element: (
+            <Guard>
+              <SearchResult />
             </Guard>
           ),
         },
