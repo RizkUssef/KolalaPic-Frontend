@@ -1,32 +1,31 @@
 import React, { useContext, useState } from "react";
-import useCsrf from "../../Hooks/useCsrf";
 import axios from "axios";
 import * as yup from "yup";
 import { AuthContext } from "../../context/Auth";
 import { useFormik } from "formik";
 import { InfinitySpin } from "react-loader-spinner";
-import { SuccessMsgContext } from "../../context/SuccessMsg";
 import { ErrorMsgContext } from "../../context/ErrorMsg";
+import { SuccessMsgContext } from "../../context/SuccessMsg";
+import { useNavigate, useParams } from "react-router-dom";
 
-export default function ForgotPassword() {
+export default function ResetPassword() {
   const { auth } = useContext(AuthContext);
   const [isCliked, setIsCliked] = useState(false);
-    const { setSuccessMsg } = useContext(SuccessMsgContext);
-    const { setErrorMsg } = useContext(ErrorMsgContext);
-
-  const csrf_forget_pass = useCsrf(
-    "http://localhost/KolalaPic/public/apiForgetPassword/csrfForget"
-  );
+  const { setSuccessMsg } = useContext(SuccessMsgContext);
+  const { setErrorMsg } = useContext(ErrorMsgContext);
+  const { reset } = useParams();
+  const nav = useNavigate();
 
   const ForgetData = {
-    email: "",
-    csrf_forget: csrf_forget_pass,
+    password: "",
+    confirm_password: "",
+    csrf_reset: reset,
   };
-  function forgetHandle(values) {
+  function resetHandle(values) {
     setIsCliked(true);
     axios
       .post(
-        `http://localhost/KolalaPic/public/apiForgetPassword/forgetPasswordHandle`,
+        `http://localhost/KolalaPic/public/apiForgetPassword/resetPasswordHandle`,
         values,
         {
           withCredentials: true,
@@ -36,24 +35,21 @@ export default function ForgotPassword() {
         }
       )
       .then((res) => {
-        // console.log(res);
-        setIsCliked(false)
-        setSuccessMsg(res.data.success)
+        setIsCliked(false);
+        setSuccessMsg(res.data.success);
+        nav("/profile");
       })
       .catch((res) => {
-        // console.log(res);
-        setErrorMsg(res.response.data.error)
+        setErrorMsg(res.response.data.error);
       });
   }
-  const forgetFormik = useFormik({
+  const resetFormik = useFormik({
     initialValues: ForgetData,
-    onSubmit: forgetHandle,
+    onSubmit: resetHandle,
     enableReinitialize: true,
     validationSchema: yup.object().shape({
-      email: yup
-        .string()
-        .email("enter vaild email")
-        .required("email is required"),
+      password: yup.string().required("email is required"),
+      confirm_password: yup.string().required("email is required"),
     }),
   });
   return (
@@ -69,32 +65,58 @@ export default function ForgotPassword() {
           <form
             className="text-2xl secondary-font flex flex-col justify-center items-start gap-5 transition-all duration-500"
             method="post"
-            onSubmit={forgetFormik.handleSubmit}
+            onSubmit={resetFormik.handleSubmit}
           >
+            <input
+              type="hidden"
+              name="csrf_reset"
+              onChange={resetFormik.handleChange}
+              onBlur={resetFormik.handleBlur}
+              value={resetFormik.values.csrf_reset}
+            />
             <div className="w-full flex flex-col justify-center items-start gap-2">
-              <label className="w-full" for="email">
-                Email
+              <label className="w-full" for="password">
+                Password
               </label>
+
               <input
                 className="base-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers"
-                type="email"
-                name="email"
-                id="email"
-                onChange={forgetFormik.handleChange}
-                onBlur={forgetFormik.handleBlur}
-                value={forgetFormik.values.email}
+                type="password"
+                name="password"
+                id="password"
+                onChange={resetFormik.handleChange}
+                onBlur={resetFormik.handleBlur}
+                value={resetFormik.values.password}
               />
-              <input
-                type="hidden"
-                name="csrf_forget"
-                onChange={forgetFormik.handleChange}
-                onBlur={forgetFormik.handleBlur}
-                value={forgetFormik.values.csrf_forget}
-              />
-              {forgetFormik.errors.email && forgetFormik.touched.email ? (
+              {resetFormik.errors.password && resetFormik.touched.password ? (
                 <div>
                   <p className="text-red-900 text-lg capitalize">
-                    {forgetFormik.errors.email}
+                    {resetFormik.errors.password}
+                  </p>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="w-full flex flex-col justify-center items-start gap-2">
+              <label className="w-full" for="password">
+                Confirm Password
+              </label>
+
+              <input
+                className="base-bg w-full rounded-lg pl-3 outline-none py-2 text-xl focus:border-solid focus:border-2 focus:border-headers"
+                type="password"
+                name="confirm_password"
+                id="confirm_password"
+                onChange={resetFormik.handleChange}
+                onBlur={resetFormik.handleBlur}
+                value={resetFormik.values.confirm_password}
+              />
+              {resetFormik.errors.confirm_password &&
+              resetFormik.touched.confirm_password ? (
+                <div>
+                  <p className="text-red-900 text-lg capitalize">
+                    {resetFormik.errors.confirm_password}
                   </p>
                 </div>
               ) : (

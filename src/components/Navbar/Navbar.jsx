@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { AuthContext } from "../../context/Auth";
@@ -10,8 +9,8 @@ import { ErrorMsgContext } from "../../context/ErrorMsg";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const { auth, setAuth } = useContext(AuthContext);
-  const {successMsg,setSuccessMsg} = useContext(SuccessMsgContext);
-  const {errorMsg, setErrorMsg} = useContext(ErrorMsgContext);
+  const { setSuccessMsg} = useContext(SuccessMsgContext);
+  const { setErrorMsg} = useContext(ErrorMsgContext);
 
   const handleScroll = () => {
     const scrolledHeight = window.scrollY;

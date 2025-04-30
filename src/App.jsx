@@ -21,6 +21,7 @@ import UploadImage from "./components/UploadImage/UploadImage";
 import Auth from "./context/Auth";
 import Guard from "./components/Guard/Guard";
 import ChangePassword from "./components/ChangePassword/ChangePassword";
+import ResetPassword from "./components/ResetPassword/ResetPassword";
 
 const queryClientObj = new QueryClient();
 
@@ -81,6 +82,14 @@ export default function App() {
           element: (
             <Guard>
               <EditProfile />
+            </Guard>
+          ),
+        },
+        {
+          path: "/reset password/:reset",
+          element: (
+            <Guard>
+              <ResetPassword />
             </Guard>
           ),
         },
